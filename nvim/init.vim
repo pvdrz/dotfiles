@@ -98,6 +98,9 @@ let g:NERDSpaceDelims = 1
 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
 
+" Comment in blocks
+let g:NERDDefaultAlign = 'left'
+
 " Toggle comments
 map <F3> <plug>NERDCommenterToggle 
 
