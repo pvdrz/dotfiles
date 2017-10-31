@@ -1,7 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Themes
-Plug 'joshdick/onedark.vim' " One Dark Theme
+Plug 'dracula/vim' " Dracula theme
 Plug 'vim-airline/vim-airline' " Cool status bar
 Plug 'vim-airline/vim-airline-themes' " Themes for status bar
 
@@ -36,6 +36,9 @@ Plug 'sebastianmarkow/deoplete-rust' " Racer Support
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 
+" Toml Plugins
+Plug 'cespare/vim-toml'
+
 call plug#end()
 
 " Tab stuff
@@ -69,11 +72,11 @@ map <A-Right> :bn<CR>
 
 " Set Theme
 syntax on
-colorscheme onedark 
+colorscheme dracula 
 set termguicolors
 
 " Set Theme for status bar
-let g:airline_theme='onedark'
+let g:airline_theme='dracula'
 let g:airline_powerline_fonts = 1
 
 " Enable deoplete autocompletion
@@ -120,7 +123,10 @@ let g:ale_linters = {
 \ 'python': ['flake8']
 \}
 
+" Python Config
+let g:deoplete#sources#jedi#python_path='/usr/bin/python3'
+
 " Rust Config
 let g:deoplete#sources#rust#show_duplicates=1
 let g:deoplete#sources#rust#racer_binary='/home/christian/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='/home/christian/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+let g:deoplete#sources#rust#rust_source_path='/home/christian/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
