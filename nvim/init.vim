@@ -39,6 +39,9 @@ Plug 'slashmili/alchemist.vim'
 " Toml Plugins
 Plug 'cespare/vim-toml'
 
+" Haskell Plugins
+Plug 'eagletmt/neco-ghc' 
+
 call plug#end()
 
 " Tab stuff
