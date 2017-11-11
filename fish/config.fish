@@ -10,6 +10,7 @@ set -gx PATH $HOME/.cargo/bin $PATH
 set -gx PATH $GOPATH/bin $PATH
 
 alias nano "nvim"
+alias vim "nvim"
 
 function check-sync
     watch grep -e Dirty: -e Writeback: /proc/meminfo
