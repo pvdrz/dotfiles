@@ -42,6 +42,12 @@ Plug 'cespare/vim-toml'
 " Haskell Plugins
 Plug 'eagletmt/neco-ghc' 
 
+" Mozart Plugins
+Plug 'Procrat/oz.vim'
+
+" Kotlin Plugins
+Plug 'udalov/kotlin-vim'
+
 call plug#end()
 
 " Tab stuff
@@ -92,6 +98,9 @@ let g:jsx_ext_required = 0
 autocmd Filetype javascript setlocal ts=2 shiftwidth=2
 autocmd Filetype html setlocal ts=2 shiftwidth=2
 
+" Fix JSX colorscheme for closing tags
+hi link xmlEndTag xmlTag
+
 " Auto Close Tags with extensions
 let g:closetag_filenames = '*.html, *.js, *.jsx'
 
@@ -133,3 +142,4 @@ let g:deoplete#sources#jedi#python_path='/usr/bin/python3'
 let g:deoplete#sources#rust#show_duplicates=1
 let g:deoplete#sources#rust#racer_binary='/home/christian/.cargo/bin/racer'
 let g:deoplete#sources#rust#rust_source_path='/home/christian/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+
