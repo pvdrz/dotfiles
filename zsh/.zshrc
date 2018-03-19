@@ -14,3 +14,9 @@ alias irc="ssh weechat_aws -t 'tmux attach-session -t weechat_session'"
 check-sync() {
     watch grep -e Dirty: -e Writeback: /proc/meminfo
 }
+
+. /etc/profile.d/vte.sh
+
+if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
+    . ~/.config/exercism/exercism_completion.zsh
+fi
