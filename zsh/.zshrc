@@ -15,6 +15,13 @@ check-sync() {
     watch grep -e Dirty: -e Writeback: /proc/meminfo
 }
 
+sync-fork() {
+    git fetch upstream
+    git checkout master
+    git merge upstream/master
+    git push
+}
+
 . /etc/profile.d/vte.sh
 
 if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
