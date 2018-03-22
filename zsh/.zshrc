@@ -11,6 +11,8 @@ alias vim=nvim
 
 alias irc="ssh weechat_aws -t 'tmux attach-session -t weechat_session'"
 
+alias grep=rg
+
 check-sync() {
     watch grep -e Dirty: -e Writeback: /proc/meminfo
 }
