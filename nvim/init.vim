@@ -30,7 +30,7 @@ Plug 'carlitux/deoplete-ternjs' "Tern Autocomplete
 
 " Rust Plugins
 Plug 'rust-lang/rust.vim' " Rust Plugin
-Plug 'sebastianmarkow/deoplete-rust' " Racer Support
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do':':UpdateRemotePlugins'} " RLS
 
 " Elixir Plugins
 Plug 'elixir-lang/vim-elixir'
@@ -130,16 +130,23 @@ let g:ale_sign_column_always = 1
 " Linters 
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
-\ 'python': ['pycodestyle']
+\ 'python': ['pycodestyle'],
+\ 'rust': ['rls']
 \}
 
 " Python Config
 let g:deoplete#sources#jedi#python_path='/usr/bin/python3'
 
-" Rust Config
-let g:deoplete#sources#rust#show_duplicates=1
-let g:deoplete#sources#rust#racer_binary='/home/christian/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='/home/christian/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+" LanguageClient Config
+let g:LanguageClient_serverCommands = {
+\ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+\}
 
+let g:LanguageClient_autoStart = 1
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()
+
+" Update time
 set updatetime=100
-
