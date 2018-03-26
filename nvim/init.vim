@@ -87,11 +87,14 @@ set termguicolors
 let g:airline_theme='dracula'
 let g:airline_powerline_fonts = 1
 
+" Add Tab Bar
+let g:airline#extensions#tabline#enabled = 1
+
 " Enable deoplete autocompletion
 let g:deoplete#enable_at_startup = 1
 
 " Fix JSX colorscheme for closing tags
- hi link xmlEndTag xmlTag
+hi link xmlEndTag xmlTag
 
  " Auto Close Tags with extensions
 let g:closetag_filenames = '*.html, *.js, *.jsx'
