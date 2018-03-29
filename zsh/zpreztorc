@@ -1,4 +1,4 @@
-zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'prompt' 'syntax-highlighting' 'history-substring-search' 'autosuggestions'
+zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'prompt' 'syntax-highlighting' 'completion' 'history-substring-search' 'autosuggestions'
 
 zstyle ':prezto:module:editor' key-bindings 'vi'
 zstyle ':prezto:module:prompt' theme 'minimal'
