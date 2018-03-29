@@ -4,6 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'dracula/vim' " Dracula theme
 Plug 'vim-airline/vim-airline' " Cool status bar
 Plug 'vim-airline/vim-airline-themes' " Themes for status bar
+Plug 'justinmk/vim-dirvish'
 
 " Edition Plugins
 Plug 'jiangmiao/auto-pairs' " Auto Pair 
