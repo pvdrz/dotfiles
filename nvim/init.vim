@@ -18,6 +18,14 @@ Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.s
  
 " Completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" Specific Languages
+
+" Elixir
+Plug 'slashmili/alchemist.vim' " Autocompletion
+Plug 'elixir-editors/vim-elixir' " Syntax highlighting
+Plug 'tpope/vim-endwise' " Add end automatically
+
 call plug#end()
 
 source $HOME/.config/nvim/edit.vim
