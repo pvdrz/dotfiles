@@ -29,3 +29,4 @@ set updatetime=100 " Time to check if file changed
 set mouse=a  " Enable mouse
 set clipboard+=unnamedplus " Enable system clipboard
 set whichwrap+=<,>,[,] " Wrap left and right to next line
+set nostartofline " Keep cursor still 
