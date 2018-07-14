@@ -1,4 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
+
 " Themes
 Plug 'dracula/vim' " Dracula theme
 Plug 'vim-airline/vim-airline' " Cool status bar
@@ -29,6 +30,9 @@ Plug 'tpope/vim-endwise' " Add end automatically
 " JSX
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
+
+" Scala
+Plug 'derekwyatt/vim-scala' " Syntax highlighting
 
 call plug#end()
 
