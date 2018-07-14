@@ -30,9 +30,10 @@ Plug 'slashmili/alchemist.vim' " Autocompletion
 Plug 'elixir-editors/vim-elixir' " Syntax highlighting
 Plug 'tpope/vim-endwise' " Add end automatically
 
-" JSX
-Plug 'pangloss/vim-javascript'
+" Typescript
+Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'peitalin/vim-jsx-typescript'
 
 " Scala
 Plug 'derekwyatt/vim-scala' " Syntax highlighting
@@ -44,4 +45,4 @@ source $HOME/.config/nvim/look.vim
 source $HOME/.config/nvim/lang/elixir.vim
 source $HOME/.config/nvim/lang/python.vim
 source $HOME/.config/nvim/lang/rust.vim
-source $HOME/.config/nvim/lang/jsx.vim
+source $HOME/.config/nvim/lang/typescript.vim
