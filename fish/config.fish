@@ -13,8 +13,6 @@ set -gx PATH $GOPATH/bin $PATH
 set -gx PATH $PREFIX/bin $PATH
 set -gx PATH $HOME/.cargo/bin $PATH
 
-
-
 # Ripgrep instead of grep
 alias grep rg
 
