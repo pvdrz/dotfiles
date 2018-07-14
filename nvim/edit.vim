@@ -18,8 +18,15 @@ map <F3> <plug>NERDCommenterToggle| " Toggle comments
 " Completion settings
 let g:deoplete#enable_at_startup = 1 " Run deoplete at startup
 
+" Linting settings
+let g:ale_linters = {} " Dictionary for linters
+let g:ale_fixers = {} " Dictionary for fixers
+let g:ale_linters_explicit = 1 " Use only specified linters
+let g:ale_fix_on_save = 1 " Run fixers on save
+
 " Language server settings
 let g:LanguageClient_serverCommands = {} " Dictionary for language servers
+
 
 " Others
 set nobackup " No backup files

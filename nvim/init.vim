@@ -20,6 +20,9 @@ Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.s
 " Completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+" Linting
+Plug 'w0rp/ale'
+
 " Specific Languages
 
 " Elixir
@@ -38,6 +41,7 @@ call plug#end()
 
 source $HOME/.config/nvim/edit.vim
 source $HOME/.config/nvim/look.vim
+source $HOME/.config/nvim/lang/elixir.vim
 source $HOME/.config/nvim/lang/python.vim
 source $HOME/.config/nvim/lang/rust.vim
 source $HOME/.config/nvim/lang/jsx.vim
