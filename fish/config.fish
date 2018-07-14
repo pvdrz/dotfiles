@@ -6,12 +6,14 @@ alias vi nvim
 # Path
 set -gx GOPATH $HOME/.go
 set -gx PREFIX $HOME/.yarn_packages
-set -gx RUST_SRC_PATH $HOME/.rustup/toolchains/nightly-x864_x64-unknown-linux-gnu/lib/rustlib/src/rust/src
+set -gx RUST_SRC_PATH $HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/
 
 set -gx PATH $HOME/.local/bin $PATH
 set -gx PATH $GOPATH/bin $PATH
 set -gx PATH $PREFIX/bin $PATH
 set -gx PATH $HOME/.cargo/bin $PATH
+
+
 
 # Ripgrep instead of grep
 alias grep rg
