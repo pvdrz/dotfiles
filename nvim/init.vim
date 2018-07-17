@@ -33,7 +33,6 @@ Plug 'tpope/vim-endwise' " Add end automatically
 " Typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
-" Plug 'peitalin/vim-jsx-typescript'
 
 " Scala
 Plug 'derekwyatt/vim-scala' " Syntax highlighting
