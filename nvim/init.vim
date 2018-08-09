@@ -31,19 +31,23 @@ Plug 'elixir-editors/vim-elixir' " Syntax highlighting
 Plug 'tpope/vim-endwise' " Add end automatically
 
 " Haskell
-Plug 'eagletmt/neco-ghc' " Syntax highlighting
+Plug 'eagletmt/neco-ghc' " Autocompletion
 
 " Typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
-" Scala
-Plug 'derekwyatt/vim-scala' " Syntax highlighting
+" Pandoc
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()
 
 source $HOME/.config/nvim/edit.vim
 source $HOME/.config/nvim/look.vim
+
+" Language specific configuration
+
 source $HOME/.config/nvim/lang/elixir.vim
 source $HOME/.config/nvim/lang/haskell.vim
 source $HOME/.config/nvim/lang/python.vim
