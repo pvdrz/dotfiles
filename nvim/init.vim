@@ -48,6 +48,7 @@ call plug#end()
 
 source $HOME/.config/nvim/edit.vim
 source $HOME/.config/nvim/look.vim
+source $HOME/.config/nvim/repl.vim
 
 " Language specific configuration
 
@@ -57,3 +58,5 @@ source $HOME/.config/nvim/lang/pandoc.vim
 source $HOME/.config/nvim/lang/python.vim
 source $HOME/.config/nvim/lang/rust.vim
 source $HOME/.config/nvim/lang/typescript.vim
+
+

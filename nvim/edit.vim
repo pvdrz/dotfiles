@@ -6,8 +6,10 @@ set smarttab " Adjust to the next indentation level
 
 " Buffer settings
 set hidden " Hide buffers instead of closing them
-map <A-Left> :bp<CR>| " Move to previous buffer
-map <A-Right> :bn<CR>| " Move to next buffer
+noremap <A-Left> :bp<CR>| " Move to previous buffer
+noremap <A-Right> :bn<CR>| " Move to next buffer
+noremap <A-Down> <C-W><C-J>| "Move to below split
+noremap <A-Up> <C-W><C-K>| "Move to above split
 
 " Comments settings
 let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters
