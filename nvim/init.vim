@@ -23,6 +23,9 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Linting
 Plug 'w0rp/ale'
 
+" Text Search
+Plug 'jremmen/vim-ripgrep'
+
 " Specific Languages
 
 " Elixir
