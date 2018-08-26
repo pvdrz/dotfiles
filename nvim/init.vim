@@ -53,6 +53,7 @@ source $HOME/.config/nvim/look.vim
 
 source $HOME/.config/nvim/lang/elixir.vim
 source $HOME/.config/nvim/lang/haskell.vim
+source $HOME/.config/nvim/lang/pandoc.vim
 source $HOME/.config/nvim/lang/python.vim
 source $HOME/.config/nvim/lang/rust.vim
 source $HOME/.config/nvim/lang/typescript.vim
