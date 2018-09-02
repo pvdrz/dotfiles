@@ -14,8 +14,11 @@ set -gx PATH $PREFIX/bin $PATH
 set -gx PATH $HOME/.cargo/bin $PATH
 set -gx PATH $HOME/.exercism/ $PATH
 
-# Ripgrep instead of grep
+# ripgrep instead of grep
 alias grep rg
+
+# fd instead of find
+alias find fd
 
 # IRC amazon instance
 alias irc "ssh irc_aws -t 'tmux attach-session -t irc_session'"
