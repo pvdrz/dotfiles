@@ -20,9 +20,6 @@ alias grep rg
 # fd instead of find
 alias find fd
 
-# IRC amazon instance
-alias irc "ssh irc_aws -t 'tmux attach-session -t irc_session'"
-
 # Check writing on disk
 function check-sync
     watch grep -e Dirty: -e Writeback: /proc/meminfo
