@@ -40,6 +40,9 @@ Plug 'eagletmt/neco-ghc' " Autocompletion
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
+" Latex
+Plug 'donRaphaco/neotex', { 'for': 'tex' }
+
 " Pandoc
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -54,9 +57,8 @@ source $HOME/.config/nvim/repl.vim
 
 source $HOME/.config/nvim/lang/elixir.vim
 source $HOME/.config/nvim/lang/haskell.vim
+source $HOME/.config/nvim/lang/latex.vim
 source $HOME/.config/nvim/lang/pandoc.vim
 source $HOME/.config/nvim/lang/python.vim
 source $HOME/.config/nvim/lang/rust.vim
 source $HOME/.config/nvim/lang/typescript.vim
-
-
