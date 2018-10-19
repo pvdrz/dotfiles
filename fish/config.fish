@@ -14,6 +14,12 @@ set -gx PATH $PREFIX/bin $PATH
 set -gx PATH $HOME/.cargo/bin $PATH
 set -gx PATH $HOME/.exercism/ $PATH
 
+# for tmux + nvim colors
+set -gx TERM xterm-256color
+
+# for cargo-miri
+set -gx MIRI_SYSROOT $HOME/.xargo/HOST
+
 # ripgrep instead of grep
 alias grep rg
 
@@ -32,3 +38,6 @@ function sync-fork
     git merge upstream/master
     git push
 end
+
+# Remove greeting
+set -gx fish_greeting ""
