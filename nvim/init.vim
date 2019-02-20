@@ -41,7 +41,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
 " Latex
-Plug 'donRaphaco/neotex', { 'for': 'tex' }
+Plug 'lervag/vimtex'
 
 call plug#end()
 
