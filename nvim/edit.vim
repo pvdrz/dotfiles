@@ -19,6 +19,8 @@ map <F3> <plug>NERDCommenterToggle| " Toggle comments
 
 " Completion settings
 let g:deoplete#enable_at_startup = 1 " Run deoplete at startup
+let g:SuperTabDefaultCompletionType = "<c-n>" " Autocomplete from above
+let g:AutoPairsMultilineClose = 0 " Do not jump to closing delimiter on next line
 
 " Linting settings
 let g:ale_linters = {} " Dictionary for linters
@@ -29,7 +31,6 @@ let g:ale_fix_on_save = 1 " Run fixers on save
 " Language server settings
 let g:LanguageClient_serverCommands = {} " Dictionary for language servers
 
-
 " Others
 set nobackup " No backup files
 set noswapfile " No swap files
@@ -39,3 +40,9 @@ set mouse=a  " Enable mouse
 set clipboard+=unnamedplus " Enable system clipboard
 set whichwrap+=<,>,[,] " Wrap left and right to next line
 set nostartofline " Keep cursor still 
+set nowrap " Do not wrap lines
+
+" Custom Mappings
+
+map b "_| " Blackhole register
+inoremap jj <Esc>| " Esc is too far

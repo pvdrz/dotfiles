@@ -19,6 +19,7 @@ Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.s
  
 " Completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'ervandew/supertab'
 
 " Linting
 Plug 'w0rp/ale'
@@ -32,13 +33,6 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'slashmili/alchemist.vim' " Autocompletion
 Plug 'elixir-editors/vim-elixir' " Syntax highlighting
 Plug 'tpope/vim-endwise' " Add end automatically
-
-" Haskell
-Plug 'eagletmt/neco-ghc' " Autocompletion
-
-" Typescript
-Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
 
 " Latex
 Plug 'lervag/vimtex'
