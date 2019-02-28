@@ -46,8 +46,6 @@ source $HOME/.config/nvim/repl.vim
 " Language specific configuration
 
 source $HOME/.config/nvim/lang/elixir.vim
-source $HOME/.config/nvim/lang/haskell.vim
 source $HOME/.config/nvim/lang/latex.vim
 source $HOME/.config/nvim/lang/python.vim
 source $HOME/.config/nvim/lang/rust.vim
-source $HOME/.config/nvim/lang/typescript.vim
