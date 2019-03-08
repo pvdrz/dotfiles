@@ -25,6 +25,9 @@ alias grep rg
 # fd instead of find
 alias find fd
 
+# sudoedit is too long
+alias svim sudoedit
+
 # Check writing on disk
 function check-sync
     watch grep -e Dirty: -e Writeback: /proc/meminfo
