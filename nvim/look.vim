@@ -1,19 +1,41 @@
+" ---------------
 " Syntax settings
-syntax on " Enable color syntax
-set showmatch  " Highlight matching parentheses
+" ---------------
 
-" Thems
-colorscheme dracula " Set theme
+" Enable color syntax
+syntax on 
+" Highlight matching parentheses
+set showmatch  
 
+" -----
+" Theme
+" -----
+
+" Set theme
+colorscheme dracula 
+" True colors
+set termguicolors
+
+" ----------------
 " Airline settings
-let g:airline_theme='dracula' " Set Airline theme
-let g:airline_powerline_fonts = 1 " Use powerline fonts in Airline
-let g:airline#extensions#tabline#enabled = 1 " Show tab bar
-let g:airline#extensions#tabline#excludes = [] " Exclude buffers by name
+" ----------------
 
+" Set Airline theme
+let g:airline_theme='dracula' 
+" Use powerline fonts in Airline
+let g:airline_powerline_fonts = 1 
+" Show tab bar
+let g:airline#extensions#tabline#enabled = 1 
+" Exclude buffers by name
+let g:airline#extensions#tabline#excludes = [] 
+" Better display for messages
+set cmdheight=2
+
+" -------------
 " Line settings
-set number " Enable line number
-set cursorline " Highlight current line
+" -------------
 
-" Others
-set termguicolors " True colors
+" Enable line number
+set number 
+" Highlight current line
+set cursorline 
