@@ -19,12 +19,16 @@ set smarttab
 set hidden 
 " Move to previous buffer
 noremap <A-Left> :bp<CR> 
+noremap <A-h> :bp<CR> 
 " Move to next buffer
 noremap <A-Right> :bn<CR>
+noremap <A-l> :bp<CR> 
 " Move to below split
 noremap <A-Down> <C-W><C-J>
+noremap <A-j> <C-W><C-J>
 " Move to above split
 noremap <A-Up> <C-W><C-K>
+noremap <A-k> <C-W><C-K>
 
 " -----------------
 " Comments settings
@@ -52,7 +56,7 @@ nmap <silent> gn <Plug>(coc-diagnostic-next)
 " Go to prev diagnostic
 nmap <silent> gn <Plug>(coc-diagnostic-prev) 
 " Show diagnostic info
-nmap <silent> <F2> <Plug>(coc-diagnostic-info) 
+map <silent> <F2> <Plug>(coc-diagnostic-info) 
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
