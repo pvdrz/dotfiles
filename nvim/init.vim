@@ -15,8 +15,6 @@ Plug 'vim-airline/vim-airline-themes'
 " Edition Plugins
 " ---------------
 
-" Auto Pair 
-Plug 'jiangmiao/auto-pairs' 
 " Surround Parentheses
 Plug 'tpope/vim-surround' 
 " Comment blocks

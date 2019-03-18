@@ -47,13 +47,19 @@ map <F3> <plug>NERDCommenterToggle
 nmap <silent> gd <Plug>(coc-definition) 
 " Goto type definition
 nmap <silent> gy <Plug>(coc-type-definition)
+" Go to next diagnostic
+nmap <silent> gn <Plug>(coc-diagnostic-next) 
+" Go to prev diagnostic
+nmap <silent> gn <Plug>(coc-diagnostic-prev) 
+" Show diagnostic info
+nmap <silent> <F2> <Plug>(coc-diagnostic-info) 
+
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
@@ -74,7 +80,7 @@ set noswapfile
 " Close Preview/Scratch window
 set completeopt-=preview
 " Time to check if file changed
-set updatetime=300 
+set updatetime=100 
 " Enable mouse
 set mouse=a  
 " Enable system clipboard
