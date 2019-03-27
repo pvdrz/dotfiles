@@ -1,17 +1,5 @@
 { config, pkgs, ... }:
-
-with pkgs;
-let 
-  unstable = import <unstable> {};
-  py-pkgs = python-packages: with python-packages; [
-    pygments
-    numpy
-    scipy
-    matplotlib
-    pandas
-  ]; 
-  my-python = python3.withPackages py-pkgs;
-in {
+let unstable = import <unstable> {}; in {
   imports =
     [
       ./hardware-configuration.nix
@@ -58,15 +46,6 @@ in {
       neovim
       fish
       htop
-      firefox
-      adapta-gtk-theme
-      unstable.rustup
-      my-python
-      yarn
-      nodejs
-      texlive.combined.scheme-full
-      gnomeExtensions.appindicator
-      gnomeExtensions.no-title-bar
     ];
 
     fonts.fonts = with pkgs; [
@@ -81,7 +60,20 @@ in {
       description = "Christian Poveda";
       shell = pkgs.fish;
       extraGroups = [ "wheel" ];
-      packages = with pkgs; [ steam ];
+      packages = with pkgs; [
+        firefox
+        adapta-gtk-theme
+        unstable.rustup
+        (python3.withPackages (import ./python.nix))
+        yarn
+        nodejs
+        texlive.combined.scheme-full
+        gnomeExtensions.appindicator
+        gnomeExtensions.no-title-bar
+        spotify
+        vlc
+        steam
+      ];
     };
 
     hardware.opengl.driSupport32Bit = true;
