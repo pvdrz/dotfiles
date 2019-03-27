@@ -25,6 +25,12 @@ let unstable = import <unstable> {}; in {
     services.xserver.layout = "latam";
 
     services.xserver.displayManager.gdm.enable = true;
+
+    services.xserver.displayManager.gdm.autoLogin = {
+      enable = true;
+      user = "christian";
+    };
+    
     services.xserver.desktopManager.gnome3.enable = true;
 
     environment.gnome3.excludePackages = with pkgs.gnome3; [
@@ -40,6 +46,7 @@ let unstable = import <unstable> {}; in {
     services.gnome3.gnome-documents.enable = pkgs.lib.mkForce false;
     services.gnome3.evolution-data-server.enable = pkgs.lib.mkForce false;
 
+    
     nixpkgs.config.allowUnfree = true;
 
     environment.systemPackages = with pkgs; [
@@ -75,6 +82,7 @@ let unstable = import <unstable> {}; in {
         steam
       ];
     };
+
 
     hardware.opengl.driSupport32Bit = true;
     hardware.pulseaudio.support32Bit = true;
