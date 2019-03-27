@@ -3,16 +3,6 @@ set -gx EDITOR nvim
 alias vim nvim
 alias vi nvim
 
-# Path
-set -gx GOPATH $HOME/.go
-set -gx PREFIX $HOME/.yarn_packages
-
-set -gx PATH $HOME/.local/bin $PATH
-set -gx PATH $GOPATH/bin $PATH
-set -gx PATH $PREFIX/bin $PATH
-set -gx PATH $HOME/.cargo/bin $PATH
-set -gx PATH $HOME/.exercism/ $PATH
-
 # for tmux + nvim colors
 set -gx TERM xterm-256color
 

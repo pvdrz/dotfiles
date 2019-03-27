@@ -35,6 +35,13 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': 'yarn install'}
 
+" -----------------------
+" Language specific plugs
+" -----------------------
+
+" Nix syntax 
+Plug 'LnL7/vim-nix'
+
 call plug#end()
 
 " -------------------
