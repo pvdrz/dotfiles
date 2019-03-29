@@ -1,6 +1,9 @@
 fish
 neovim
 intel-ucode
+vulkan-intel
+lib32-vulkan-icd-loader
+vulkan-icd-loader
 firefox
 git
 vlc
