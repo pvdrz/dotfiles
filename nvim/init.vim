@@ -33,7 +33,7 @@ Plug 'airblade/vim-gitgutter'
 " Completion
 " ----------
 
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': 'yarn install'}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 " -----------------------
 " Language specific plugs
