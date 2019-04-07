@@ -29,18 +29,7 @@ Plug 'justinmk/vim-dirvish'
 " Show git changes
 Plug 'airblade/vim-gitgutter' 
 
-" ----------
-" Completion
-" ----------
-
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-
 call plug#end()
-
-" -------------------
-" Coc.nvim extensions
-" -------------------
-let g:coc_global_extensions = ['coc-pairs', 'coc-rls', 'coc-pyls', 'coc-json']
 
 source $HOME/.config/nvim/edit.vim
 source $HOME/.config/nvim/look.vim
