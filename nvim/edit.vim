@@ -39,36 +39,44 @@ let g:NERDCommentEmptyLines = 1
 " Comment in blocks
 let g:NERDDefaultAlign = "left"
 " Toggle comments 
-map <F3> <plug>NERDCommenterToggle
+map <F3> <Plug>NERDCommenterToggle
 
 
 " ------------------------
 " Language Server Protocol
 " ------------------------
 
+" Empty dictionary for servers
+let g:LanguageClient_serverCommands = {}
 " No virtual text
-let g:lsp_virtual_text_enabled = 0
-" show diagnostics on statusline
-let g:lsp_diagnostics_echo_cursor = 1 
-" Delay code completion popup
-let g:asyncomplete_popup_delay = 300
+let g:LanguageClient_useVirtualText = 0
 " Goto definition
-nnoremap <silent> gd :LspDefinition<CR>
+nmap gd :call LanguageClient#textDocument_definition()<CR>
 " Goto type definition
-nnoremap <silent> gt :LspTypeDefinition<CR>
-" Goto next error
-nnoremap <silent> gn :LspNextError<CR>
-" Goto previous error
-nnoremap <silent> gp :LspPreviousError<CR>
+nmap gt :call LanguageClient#textDocument_typeDefinition()<CR>
+
+
+" --------
+" Quickfix
+" --------
+
+" Goto next quickfix item
+nmap gn <Plug>(qf_qf_next)
+" Goto previous quickfix item
+nmap gp <Plug>(qf_qf_previous)
+" Toggle quickfix window
+nmap <F2> <Plug>(qf_qf_toggle)
 
 
 " ---------- 
 " Completion
 " ----------
 
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+" Enable deoplete
+let g:deoplete#enable_at_startup = 1
+" Navigate completions from top to bottom
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 
 " ---------------
 " Custom Mappings

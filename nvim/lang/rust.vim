@@ -1,7 +1,3 @@
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rls']},
-        \ 'whitelist': ['rust'],
-        \ })
+if executable("rls")
+    let g:LanguageClient_serverCommands["rust"] = ["rls"]
 endif

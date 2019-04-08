@@ -23,12 +23,11 @@ Plug 'jiangmiao/auto-pairs'
 " Comment blocks
 Plug 'scrooloose/nerdcommenter' 
 " Code completion
-Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Use tab for code completion
+Plug 'ervandew/supertab'
 " LSP client 
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/async.vim'
-
+Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 
 " ----------------
 " Projects Plugins
@@ -38,6 +37,8 @@ Plug 'prabirshrestha/async.vim'
 Plug 'justinmk/vim-dirvish'
 " Show git changes
 Plug 'airblade/vim-gitgutter' 
+" Managing the quickfix window
+Plug 'romainl/vim-qf'
 
 call plug#end()
 
