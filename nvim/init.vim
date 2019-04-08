@@ -1,4 +1,4 @@
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin("~/.local/share/nvim/plugged")
 
 " ------
 " Themes
@@ -11,15 +11,25 @@ Plug 'vim-airline/vim-airline'
 " Themes for status bar
 Plug 'vim-airline/vim-airline-themes' 
 
+
 " ---------------
 " Edition Plugins
 " ---------------
 
-" Surround Parentheses
-Plug 'tpope/vim-surround' 
+" Surround parentheses
+Plug 'tpope/vim-surround'
+" Auto close parentheses
+Plug 'jiangmiao/auto-pairs'
 " Comment blocks
 Plug 'scrooloose/nerdcommenter' 
- 
+" Code completion
+Plug 'prabirshrestha/asyncomplete.vim'
+" LSP client 
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/async.vim'
+
+
 " ----------------
 " Projects Plugins
 " ----------------
@@ -33,3 +43,5 @@ call plug#end()
 
 source $HOME/.config/nvim/edit.vim
 source $HOME/.config/nvim/look.vim
+source $HOME/.config/nvim/lang/rust.vim
+source $HOME/.config/nvim/lang/python.vim

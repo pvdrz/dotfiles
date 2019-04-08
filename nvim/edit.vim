@@ -11,6 +11,7 @@ set expandtab
 " Adjust to the next indentation level
 set smarttab 
 
+
 " --------------- 
 " Buffer settings
 " ---------------
@@ -26,6 +27,7 @@ noremap <A-Down> <C-W><C-J>
 " Move to above split
 noremap <A-Up> <C-W><C-K>
 
+
 " -----------------
 " Comments settings
 " -----------------
@@ -35,27 +37,50 @@ let g:NERDSpaceDelims = 1
 " Allow commenting and inverting empty lines
 let g:NERDCommentEmptyLines = 1
 " Comment in blocks
-let g:NERDDefaultAlign = 'left'
+let g:NERDDefaultAlign = "left"
 " Toggle comments 
 map <F3> <plug>NERDCommenterToggle
+
 
 " ------------------------
 " Language Server Protocol
 " ------------------------
 
+" No virtual text
+let g:lsp_virtual_text_enabled = 0
+" show diagnostics on statusline
+let g:lsp_diagnostics_echo_cursor = 1 
+" Delay code completion popup
+let g:asyncomplete_popup_delay = 300
 " Goto definition
+nnoremap <silent> gd :LspDefinition<CR>
 " Goto type definition
-" Go to next diagnostic
-" Go to prev diagnostic
-" Show diagnostic info
-" Highlight symbol under cursor on CursorHold
+nnoremap <silent> gt :LspTypeDefinition<CR>
+" Goto next error
+nnoremap <silent> gn :LspNextError<CR>
+" Goto previous error
+nnoremap <silent> gp :LspPreviousError<CR>
+
 
 " ---------- 
 " Completion
 " ----------
 
-" Use tab for trigger completion with characters ahead and navigate.
-" Use enter to confirm completion
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+
+" ---------------
+" Custom Mappings
+" ---------------
+
+" Blackhole register
+map b "_
+" Esc is too far
+inoremap jj <Esc>
+" Insert line without entering insert mode
+nnoremap o o<Esc>
+nnoremap O O<Esc>
 
 " ------
 " Others
@@ -79,15 +104,3 @@ set whichwrap+=<,>,[,]
 set nostartofline 
 " Do not wrap lines
 set nowrap 
-
-" ---------------
-" Custom Mappings
-" ---------------
-
-" Blackhole register
-map b "_
-" Esc is too far
-inoremap jj <Esc>
-" Insert line without entering insert mode
-nnoremap o o<Esc>
-nnoremap O O<Esc>
