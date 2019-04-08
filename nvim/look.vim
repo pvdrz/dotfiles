@@ -39,4 +39,6 @@ let g:airline#extensions#tabline#excludes = []
 " Enable line number
 set number 
 " Highlight current line
-set cursorline 
+set cursorline
+" Always show sign column
+set signcolumn=yes
