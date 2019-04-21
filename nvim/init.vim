@@ -8,8 +8,6 @@ call plug#begin("~/.local/share/nvim/plugged")
 Plug 'dracula/vim'
 " Cool status bar
 Plug 'vim-airline/vim-airline' 
-" Themes for status bar
-Plug 'vim-airline/vim-airline-themes' 
 
 
 " ---------------
