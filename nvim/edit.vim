@@ -41,6 +41,13 @@ let g:NERDDefaultAlign = "left"
 " Toggle comments 
 map <F3> <Plug>NERDCommenterToggle
 
+" ---------------
+" Search settings
+" ---------------
+
+" Do incremental search
+set incsearch
+
 
 " ------------------------
 " Language Server Protocol
@@ -110,5 +117,3 @@ set clipboard+=unnamedplus
 set whichwrap+=<,>,[,] 
 " Keep cursor still 
 set nostartofline 
-" Do not wrap lines
-set nowrap 
