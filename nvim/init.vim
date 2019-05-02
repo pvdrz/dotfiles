@@ -38,6 +38,13 @@ Plug 'airblade/vim-gitgutter'
 " Managing the quickfix window
 Plug 'romainl/vim-qf'
 
+
+" -----
+" Latex
+" -----
+
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 source $HOME/.config/nvim/edit.vim
