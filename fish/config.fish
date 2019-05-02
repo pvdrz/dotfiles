@@ -3,8 +3,8 @@ set -gx EDITOR nvim
 alias vim nvim
 alias vi nvim
 
-# for tmux + nvim colors
-set -gx TERM xterm-256color
+# for local binaries
+set -gx PATH $HOME/.local/bin $PATH
 
 # ripgrep instead of grep
 alias grep rg
