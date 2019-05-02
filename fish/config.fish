@@ -6,9 +6,6 @@ alias vi nvim
 # for tmux + nvim colors
 set -gx TERM xterm-256color
 
-# for cargo-miri
-set -gx MIRI_SYSROOT $HOME/.xargo/HOST
-
 # ripgrep instead of grep
 alias grep rg
 
