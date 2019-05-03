@@ -51,3 +51,4 @@ source $HOME/.config/nvim/edit.vim
 source $HOME/.config/nvim/look.vim
 source $HOME/.config/nvim/lang/rust.vim
 source $HOME/.config/nvim/lang/python.vim
+source $HOME/.config/nvim/lang/haskell.vim
