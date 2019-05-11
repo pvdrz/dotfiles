@@ -65,5 +65,6 @@ python-scipy
 python-matplotlib
 python-pandas
 steam
-wl-clipboard
 pkgfile
+zeal
+python-pygments
