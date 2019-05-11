@@ -5,6 +5,7 @@ alias vi nvim
 
 # for local binaries
 set -gx PATH $HOME/.local/bin $PATH
+set -gx PATH (stack path | grep "^bin-path") $PATH
 
 # ripgrep instead of grep
 alias grep rg
