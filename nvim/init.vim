@@ -45,6 +45,12 @@ Plug 'romainl/vim-qf'
 
 Plug 'lervag/vimtex'
 
+" -----
+" Haskell
+" -----
+
+Plug 'neovimhaskell/haskell-vim'
+
 call plug#end()
 
 source $HOME/.config/nvim/edit.vim
