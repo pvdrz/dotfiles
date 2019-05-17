@@ -7,12 +7,6 @@ alias vi nvim
 set -gx PATH $HOME/.local/bin $PATH
 set -gx PATH (stack path | grep "^bin-path") $PATH
 
-# ripgrep instead of grep
-alias grep rg
-
-# fd instead of find
-alias find fd
-
 # sudoedit is too long
 alias svim sudoedit
 
