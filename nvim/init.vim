@@ -51,6 +51,12 @@ Plug 'lervag/vimtex'
 
 Plug 'neovimhaskell/haskell-vim'
 
+" --------
+" Markdown
+" --------
+
+Plug 'JamshedVesuna/vim-markdown-preview'
+
 call plug#end()
 
 source $HOME/.config/nvim/edit.vim
