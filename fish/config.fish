@@ -5,7 +5,6 @@ alias vi nvim
 
 # for local binaries
 set -gx PATH $HOME/.local/bin $PATH
-set -gx PATH (stack path | grep "^bin-path") $PATH
 
 # sudoedit is too long
 alias svim sudoedit
