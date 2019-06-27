@@ -26,6 +26,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ervandew/supertab'
 " LSP client 
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+" Highlighting for f<char>
+Plug 'unblevable/quick-scope'
 
 " ----------------
 " Projects Plugins
