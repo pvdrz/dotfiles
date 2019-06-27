@@ -25,3 +25,6 @@ end
 
 # Remove greeting
 set -gx fish_greeting ""
+
+# Source local config
+source $HOME/.local.fish
