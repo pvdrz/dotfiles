@@ -61,7 +61,17 @@ let g:LanguageClient_useVirtualText = 0
 nmap gd :call LanguageClient#textDocument_definition()<CR>
 " Goto type definition
 nmap gt :call LanguageClient#textDocument_typeDefinition()<CR>
-
+" Function to blacklist formatting
+function FormatFile(blacklist)
+    let pwd = expand("%:p")
+    for path in a:blacklist
+        if pwd =~ path
+            return 0
+        endif
+    endfor
+    call LanguageClient#textDocument_formatting_sync()
+    return 1
+endfunction
 
 " --------
 " Quickfix
