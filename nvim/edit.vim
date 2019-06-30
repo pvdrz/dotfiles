@@ -3,23 +3,23 @@
 " ------------
 
 " Number of spaces for tab
-set ts=4 
+set ts=4
 " Number of spaces for reindent
-set shiftwidth=4 
+set shiftwidth=4
 " Spaces instead of tabs
-set expandtab 
+set expandtab
 " Adjust to the next indentation level
-set smarttab 
+set smarttab
 
 
-" --------------- 
+" ---------------
 " Buffer settings
 " ---------------
 
 " Hide buffers instead of closing them
-set hidden 
+set hidden
 " Move to previous buffer
-noremap <A-Left> :bp<CR> 
+noremap <A-Left> :bp<CR>
 " Move to next buffer
 noremap <A-Right> :bn<CR>
 " Move to below split
@@ -33,12 +33,12 @@ noremap <A-Up> <C-W><C-K>
 " -----------------
 
 " Add spaces after comment delimiters
-let g:NERDSpaceDelims = 1 
+let g:NERDSpaceDelims = 1
 " Allow commenting and inverting empty lines
 let g:NERDCommentEmptyLines = 1
 " Comment in blocks
 let g:NERDDefaultAlign = "left"
-" Toggle comments 
+" Toggle comments
 map <F3> <Plug>NERDCommenterToggle
 
 " ---------------
@@ -85,7 +85,7 @@ nmap gp <Plug>(qf_qf_previous)
 nmap <F2> <Plug>(qf_qf_toggle)
 
 
-" ---------- 
+" ----------
 " Completion
 " ----------
 
@@ -93,6 +93,16 @@ nmap <F2> <Plug>(qf_qf_toggle)
 let g:deoplete#enable_at_startup = 1
 " Navigate completions from top to bottom
 let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" --------------------
+" Whitespáce managment
+" --------------------
+
+" Highlight trailingwhitespaces
+let g:better_whitespace_enabled=1
+" Remove trailing whitespaces on save
+let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
 
 
 " ---------------
@@ -114,16 +124,16 @@ nnoremap O O<Esc>
 " No backup files
 set nobackup
 " No swap files
-set noswapfile 
+set noswapfile
 " Close Preview/Scratch window
 set completeopt-=preview
 " Time to check if file changed
-set updatetime=100 
+set updatetime=100
 " Enable mouse
-set mouse=a  
+set mouse=a
 " Enable system clipboard
-set clipboard+=unnamedplus 
+set clipboard+=unnamedplus
 " Wrap left and right to next line
-set whichwrap+=<,>,[,] 
-" Keep cursor still 
-set nostartofline 
+set whichwrap+=<,>,[,]
+" Keep cursor still
+set nostartofline

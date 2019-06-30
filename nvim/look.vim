@@ -3,9 +3,9 @@
 " ---------------
 
 " Enable color syntax
-syntax on 
+syntax on
 " Highlight matching parentheses
-set showmatch  
+set showmatch
 
 
 " -----
@@ -13,7 +13,7 @@ set showmatch
 " -----
 
 " Set theme
-colorscheme dracula 
+colorscheme dracula
 " True colors
 set termguicolors
 
@@ -23,9 +23,9 @@ set termguicolors
 " ----------------
 
 " Use powerline fonts in Airline
-let g:airline_powerline_fonts = 1 
+let g:airline_powerline_fonts = 1
 " Show tab bar
-let g:airline#extensions#tabline#enabled = 1 
+let g:airline#extensions#tabline#enabled = 1
 
 
 " -------------
@@ -33,7 +33,7 @@ let g:airline#extensions#tabline#enabled = 1
 " -------------
 
 " Enable line number
-set number 
+set number
 " Highlight current line
 set cursorline
 " Always show sign column

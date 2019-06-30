@@ -28,6 +28,8 @@ Plug 'ervandew/supertab'
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 " Highlighting for f<char>
 Plug 'unblevable/quick-scope'
+" Manage whitespaces
+Plug 'ntpeters/vim-better-whitespace'
 
 " ----------------
 " Projects Plugins
