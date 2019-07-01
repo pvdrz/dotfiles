@@ -47,6 +47,10 @@ map <F3> <Plug>NERDCommenterToggle
 
 " Do incremental search
 set incsearch
+" Use ripgrep
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+" Binding for using grep
+nnoremap ,g :silent grep!<Space>
 
 
 " ------------------------
@@ -58,9 +62,11 @@ let g:LanguageClient_serverCommands = {}
 " No virtual text
 let g:LanguageClient_useVirtualText = 0
 " Goto definition
-nmap gd :call LanguageClient#textDocument_definition()<CR>
+nmap ,d :call LanguageClient#textDocument_definition()<CR>
 " Goto type definition
-nmap gt :call LanguageClient#textDocument_typeDefinition()<CR>
+nmap ,t :call LanguageClient#textDocument_typeDefinition()<CR>
+" Use location list for diagnostics
+let g:LanguageClient_diagnosticsList = "Location"
 " Function to blacklist formatting
 function FormatFile(blacklist)
     let pwd = expand("%:p")
@@ -73,14 +79,17 @@ function FormatFile(blacklist)
     return 1
 endfunction
 
+
 " --------
 " Quickfix
 " --------
 
-" Goto next quickfix item
-nmap gn <Plug>(qf_qf_next)
-" Goto previous quickfix item
-nmap gp <Plug>(qf_qf_previous)
+" Goto next location item
+nmap ,n <Plug>(qf_loc_next)
+" Goto previous location item
+nmap ,p <Plug>(qf_loc_previous)
+" Toggle location window
+nmap <F1> <Plug>(qf_loc_toggle)
 " Toggle quickfix window
 nmap <F2> <Plug>(qf_qf_toggle)
 
@@ -116,6 +125,7 @@ inoremap jj <Esc>
 " Insert line without entering insert mode
 nnoremap o o<Esc>
 nnoremap O O<Esc>
+
 
 " ------
 " Others
