@@ -103,8 +103,9 @@ let g:deoplete#enable_at_startup = 1
 " Navigate completions from top to bottom
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
+
 " --------------------
-" Whitespáce managment
+" Whitespace managment
 " --------------------
 
 " Highlight trailingwhitespaces
@@ -112,6 +113,15 @@ let g:better_whitespace_enabled=1
 " Remove trailing whitespaces on save
 let g:strip_whitespace_on_save=1
 let g:strip_whitespace_confirm=0
+
+" ----
+" Undo
+" ----
+
+" Maintain undo history between sessions
+set undofile
+" keep undofiles under the same directory
+set undodir=~/.undodir
 
 
 " ---------------
