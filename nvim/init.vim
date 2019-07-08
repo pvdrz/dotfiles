@@ -7,7 +7,7 @@ call plug#begin("~/.local/share/nvim/plugged")
 " Dracula theme
 Plug 'dracula/vim'
 " Cool status bar
-Plug 'vim-airline/vim-airline' 
+Plug 'vim-airline/vim-airline'
 
 
 " ---------------
@@ -19,17 +19,20 @@ Plug 'tpope/vim-surround'
 " Auto close parentheses
 Plug 'jiangmiao/auto-pairs'
 " Comment blocks
-Plug 'scrooloose/nerdcommenter' 
+Plug 'scrooloose/nerdcommenter'
 " Code completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Use tab for code completion
 Plug 'ervandew/supertab'
-" LSP client 
+" LSP client
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 " Highlighting for f<char>
 Plug 'unblevable/quick-scope'
 " Manage whitespaces
 Plug 'ntpeters/vim-better-whitespace'
+" Toggle relative/absolute line numbers
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
 
 " ----------------
 " Projects Plugins
@@ -38,7 +41,7 @@ Plug 'ntpeters/vim-better-whitespace'
 " Explore directories
 Plug 'justinmk/vim-dirvish'
 " Show git changes
-Plug 'airblade/vim-gitgutter' 
+Plug 'airblade/vim-gitgutter'
 " Managing the quickfix window
 Plug 'romainl/vim-qf'
 
