@@ -47,6 +47,12 @@ Plug 'romainl/vim-qf'
 
 
 " -----
+" Rust
+" -----
+
+Plug 'rust-lang/rust.vim'
+
+" -----
 " Latex
 " -----
 
