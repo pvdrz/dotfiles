@@ -37,5 +37,10 @@ function tw --wraps=task
     end
 end
 
-# Source local config
-source $HOME/.local.fish
+# Because wifi sucks
+function rwifi
+    sudo rwifi
+end
+
+# Source cms-config
+source $HOME/Workspace/cms-scripts/shell/config.fish
