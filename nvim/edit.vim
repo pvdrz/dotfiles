@@ -1,3 +1,18 @@
+" ---------------
+" Custom Mappings
+" ---------------
+
+" Blackhole register
+map b "_
+" Esc is too far
+inoremap jj <Esc>
+" Insert line without entering insert mode
+nnoremap o o<Esc>
+nnoremap O O<Esc>
+" Remap leader
+let mapleader=","
+
+
 " ------------
 " Tab settings
 " ------------
@@ -50,7 +65,7 @@ set incsearch
 " Use ripgrep
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 " Binding for using grep
-nnoremap ,g :silent grep!<Space>
+nnoremap <leader>g :silent grep!<Space>
 
 
 " ------------------------
@@ -62,9 +77,9 @@ let g:LanguageClient_serverCommands = {}
 " No virtual text
 let g:LanguageClient_useVirtualText = 0
 " Goto definition
-nmap ,d :call LanguageClient#textDocument_definition()<CR>
+nmap <leader>d :call LanguageClient#textDocument_definition()<CR>
 " Goto type definition
-nmap ,t :call LanguageClient#textDocument_typeDefinition()<CR>
+nmap <leader>t :call LanguageClient#textDocument_typeDefinition()<CR>
 " Use location list for diagnostics
 let g:LanguageClient_diagnosticsList = "Location"
 " Function to blacklist formatting
@@ -85,9 +100,9 @@ endfunction
 " --------
 
 " Goto next location item
-nmap ,n <Plug>(qf_loc_next)
+nmap <leader>n <Plug>(qf_loc_next)
 " Goto previous location item
-nmap ,p <Plug>(qf_loc_previous)
+nmap <leader>p <Plug>(qf_loc_previous)
 " Toggle location window
 nmap <F1> <Plug>(qf_loc_toggle)
 " Toggle quickfix window
@@ -122,19 +137,6 @@ let g:strip_whitespace_confirm=0
 set undofile
 " keep undofiles under the same directory
 set undodir=~/.undodir
-
-
-" ---------------
-" Custom Mappings
-" ---------------
-
-" Blackhole register
-map b "_
-" Esc is too far
-inoremap jj <Esc>
-" Insert line without entering insert mode
-nnoremap o o<Esc>
-nnoremap O O<Esc>
 
 
 " ------
