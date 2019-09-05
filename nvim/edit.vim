@@ -11,6 +11,8 @@ nnoremap o o<Esc>
 nnoremap O O<Esc>
 " Remap leader
 let mapleader=","
+" Delete to blackhole register
+map <BS> "_d
 
 
 " ------------
