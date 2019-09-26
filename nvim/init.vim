@@ -74,7 +74,7 @@ call plug#end()
 
 source $HOME/.config/nvim/edit.vim
 source $HOME/.config/nvim/look.vim
-source $HOME/.config/nvim/lang/rust.vim
-source $HOME/.config/nvim/lang/python.vim
-source $HOME/.config/nvim/lang/haskell.vim
-source $HOME/.config/nvim/lang/latex.vim
+
+for lang in split(globpath("$HOME/.config/nvim/lang/", "*"), "\n")
+    exe "source" lang
+endfor
