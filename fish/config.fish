@@ -46,9 +46,9 @@ end
 
 # Install rustup toolchain
 function toolchain-install
-    rustup-toolchain-install-master -f (cat ./rust-version) -c rust-src -n $argv[1]
+    rustup-toolchain-install-master -f (cat ./rust-version) -c rust-src rustc-dev -n $argv[1]
 end
-#
+
 # Update rustup toolchain
 function toolchain-update
     set name $argv[1]
@@ -62,11 +62,8 @@ function toolchain-update
     set new_hash (cat ./rust-version)
 
     if test $old_hash != $new_hash
-        rustup-toolchain-install-master -f $new_hash -c rust-src -n $name
+        rustup-toolchain-install-master -f $new_hash -c rust-src rustc-dev -n $name
     else
         echo "toolchain $name is up to date"
     end
 end
-
-# Source cms-config
-source $HOME/Workspace/cms-scripts/shell/config.fish
