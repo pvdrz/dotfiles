@@ -68,4 +68,4 @@ transmission-gtk
 cmake
 time
 llvm
-ttf-roboto
+noto-fonts
