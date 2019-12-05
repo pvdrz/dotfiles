@@ -39,11 +39,6 @@ function tw --wraps=task
     end
 end
 
-# Because wifi sucks
-function rwifi
-    sudo rwifi
-end
-
 # Install rustup toolchain
 function toolchain-install
     rustup-toolchain-install-master -f (cat ./rust-version) -c rust-src rustc-dev -n $argv[1]
