@@ -36,5 +36,17 @@ let g:airline#extensions#tabline#enabled = 1
 set number
 " Highlight current line
 set cursorline
-" Always show sign column
-set signcolumn=yes
+
+" ---
+" Git
+" ---
+
+" Never show sign column
+set signcolumn=no
+" Set gitgutter highlights for line number
+highlight link GitGutterAddLineNr DiffAdd
+highlight link GitGutterChangeLineNr DiffChange
+highlight link GitGutterDeleteLineNr DiffDelete
+highlight link GitGutterChangeDeleteLineNr DiffChange
+" Use highlighting of git changes only in line numbers
+let g:gitgutter_highlight_linenrs = 1
