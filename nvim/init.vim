@@ -70,6 +70,18 @@ Plug 'neovimhaskell/haskell-vim'
 
 Plug 'JamshedVesuna/vim-markdown-preview'
 
+" ------
+" Elixir
+" ------
+
+Plug 'elixir-editors/vim-elixir'
+Plug 'slashmili/alchemist.vim'
+
+" ------
+" Racket
+" ------
+Plug 'wlangstroth/vim-racket'
+
 call plug#end()
 
 source $HOME/.config/nvim/edit.vim
