@@ -9,5 +9,6 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tpope/vim-surround'
 Plug 'cohama/lexima.vim'
+Plug 'bronson/vim-trailing-whitespace'
 
 call plug#end()

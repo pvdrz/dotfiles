@@ -15,15 +15,17 @@ let g:lexima_enable_basic_rules = 1
 " ------
 " hide buffers instead of closing them
 set hidden
-" No backup files
+" no backup files
 set nobackup
-" No swap files
+" no swap files
 set noswapfile
-" Close Preview/Scratch window
+" close Preview/Scratch window
 set completeopt-=preview
-" Enable mouse
+" enable mouse
 set mouse=a
-" Enable system clipboard
+" enable system clipboard
 set clipboard+=unnamedplus
-" Wrap left and right to next line
+" wrap left and right to next line
 set whichwrap+=<,>,[,]
+" delete trailing whitespaces on save
+autocmd BufWritePre * :FixWhitespace
