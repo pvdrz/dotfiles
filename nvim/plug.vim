@@ -11,5 +11,6 @@ Plug 'tpope/vim-surround'
 Plug 'cohama/lexima.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'preservim/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
