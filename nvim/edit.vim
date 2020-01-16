@@ -10,6 +10,16 @@ let g:deoplete#enable_at_startup = 1
 " enable basic rules
 let g:lexima_enable_basic_rules = 1
 
+" -------------
+" nerdcommenter
+" -------------
+" add heading space when commenting
+let g:NERDSpaceDelims = 1
+" allow commenting empty lines
+let g:NERDCommentEmptyLines = 1
+" comment in blocks
+let g:NERDDefaultAlign = "left"
+
 " ------
 " others
 " ------

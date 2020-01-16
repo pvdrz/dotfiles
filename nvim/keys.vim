@@ -20,5 +20,7 @@ map <leader>b "_
 " use backspace to delete to blackhole register
 map <BS> "_d
 
+" toggle comments
+map <F3> <Plug>NERDCommenterToggle
 " call formatting
 nnoremap <F5> :call LanguageClient#textDocument_formatting_sync()<CR>

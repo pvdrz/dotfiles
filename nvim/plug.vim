@@ -10,5 +10,6 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tpope/vim-surround'
 Plug 'cohama/lexima.vim'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
