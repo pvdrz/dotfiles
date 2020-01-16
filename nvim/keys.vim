@@ -15,10 +15,12 @@ nnoremap <F5> :call LanguageClient#textDocument_formatting_sync()<CR>
 " ---------
 " navigation
 " ----------
-" move to previous buffer
-noremap <A-Left> :bp<CR>
-" move to next buffer
+" move to next/previous buffer
 noremap <A-Right> :bn<CR>
+noremap <A-Left> :bp<CR>
+" move to next/previous git change
+nmap <leader>c <Plug>(GitGutterNextHunk)
+nmap <leader>C <Plug>(GitGutterPrevHunk)
 
 " -------
 " edition

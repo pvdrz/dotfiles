@@ -4,3 +4,5 @@ let g:NERDSpaceDelims = 1
 let g:NERDCommentEmptyLines = 1
 " comment in blocks
 let g:NERDDefaultAlign = "left"
+" do not load key mappings
+let g:NERDCreateDefaultMappings = 0
