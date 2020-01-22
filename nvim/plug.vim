@@ -12,5 +12,6 @@ Plug 'cohama/lexima.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
+Plug 'nelstrom/vim-visual-star-search'
 
 call plug#end()
