@@ -6,6 +6,8 @@ noremap U u
 command! -bar -nargs=* -complete=file -range=% -bang W <line1>,<line2>write<bang> <args>
 command! -bar -nargs=* -complete=file -range=% -bang Wq <line1>,<line2>wq<bang> <args>
 command! -bar -nargs=* -complete=file -range=% -bang WQ <line1>,<line2>wq<bang> <args>
+" unmap s
+map s <nop>
 " toggle comments
 map <F3> <Plug>NERDCommenterToggle
 " call formatting

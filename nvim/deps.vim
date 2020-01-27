@@ -7,7 +7,7 @@ Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh
 Plug 'Shougo/deoplete.nvim'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'tpope/vim-surround'
+Plug 'machakann/vim-sandwich'
 Plug 'cohama/lexima.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'preservim/nerdcommenter'
