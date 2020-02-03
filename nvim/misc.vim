@@ -14,3 +14,11 @@ set clipboard+=unnamedplus
 set whichwrap+=<,>,[,]
 " delete trailing whitespaces on save
 autocmd BufWritePre * :FixWhitespace
+" set number of spaces for tab
+set ts=4
+" set number of spaces for reindent
+set shiftwidth=4
+" use spaces instead of tabs
+set expandtab
+" adjust to the next indentation level
+set smarttab
