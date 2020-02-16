@@ -1,6 +1,5 @@
 adapta-gtk-theme
 adobe-source-code-pro-fonts
-adobe-source-code-pro-fonts
 baobab
 cheese
 cmake
@@ -10,6 +9,7 @@ fd
 file-roller
 firefox
 fish
+gcc
 gdm
 git
 gnome-calculator
@@ -30,7 +30,11 @@ gvfs
 gvfs-mtp
 htop
 intel-ucode
+iw
 lib32-vulkan-icd-loader
+linux
+linux-firmware
+linux-headers
 llvm
 mousetweaks
 mutter
@@ -41,12 +45,14 @@ noto-fonts
 openssh
 pkgfile
 python-language-server
-python-neovim
 python-pip
 python-pygments
+python-pynvim
+qbittorrent
 ripgrep
 rustup
 steam
+sudo
 sushi
 task
 texlive-bibtexextra
@@ -60,11 +66,11 @@ texlive-science
 time
 tracker
 tracker-miners
-transmission-gtk
 vlc
 vulkan-icd-loader
 vulkan-intel
 wl-clipboard
 xdg-user-dirs-gtk
+yapf
 z3
 zeal
