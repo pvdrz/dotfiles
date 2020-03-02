@@ -13,5 +13,6 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'nelstrom/vim-visual-star-search'
+Plug 'cespare/vim-toml'
 
 call plug#end()
