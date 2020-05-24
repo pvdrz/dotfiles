@@ -14,5 +14,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'cespare/vim-toml'
+Plug 'elixir-editors/vim-elixir'
+Plug 'tpope/vim-endwise'
 
 call plug#end()
