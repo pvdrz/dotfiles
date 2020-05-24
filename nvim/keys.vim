@@ -13,6 +13,13 @@ map <F3> <Plug>NERDCommenterToggle
 " call formatting
 nnoremap <F5> :call LanguageClient#textDocument_formatting_sync()<CR>
 
+" ----------------
+" lsp key mappings
+" ----------------
+nmap <leader>d :call LanguageClient#textDocument_definition()<CR>
+nmap <leader>t :call LanguageClient#textDocument_typeDefinition()<CR>
+nmap <leader>r :call LanguageClient_textDocument_references()<CR>
+nmap <leader>m :call LanguageClient_textDocument_hover()<CR>
 
 " ---------
 " navigation
