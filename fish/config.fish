@@ -8,6 +8,8 @@ set -gx PATH $HOME/.local/bin $PATH
 # for cargo binaries
 set -gx PATH $HOME/.cargo/bin $PATH
 
+set -gx TERM xterm-kitty
+
 # sudoedit is too long
 alias svim sudoedit
 
@@ -61,4 +63,10 @@ function toolchain-update
     else
         echo "toolchain $name is up to date"
     end
+end
+
+function killpci
+    sudo modprobe -r ath10k_pci
+    sudo modprobe -r ath10k_core
+    sudo modprobe -r ath
 end
