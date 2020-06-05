@@ -16,5 +16,6 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'cespare/vim-toml'
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-endwise'
+Plug 'romainl/vim-qf'
 
 call plug#end()

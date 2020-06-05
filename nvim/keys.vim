@@ -41,3 +41,13 @@ nnoremap O O<Esc>
 map <leader>b "_
 " use backspace to delete to blackhole register
 map <BS> "_d
+
+" ------
+" splits
+" ------
+" toggle quickfix
+nmap <F4> <Plug>(qf_qf_toggle)
+" move to the upper split
+noremap <A-Up> <C-w><Up>
+" move to the lower split
+noremap <A-Down> <C-w><Down>
