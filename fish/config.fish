@@ -7,6 +7,9 @@ alias vi nvim
 set -gx PATH $HOME/.local/bin $PATH
 # for cargo binaries
 set -gx PATH $HOME/.cargo/bin $PATH
+# for haskell binaries
+set -gx GHCUP_INSTALL_BASE_PREFIX $HOME
+set -gx PATH $HOME/.cabal/bin $GHCUP_INSTALL_BASE_PREFIX/.ghcup/bin $PATH
 
 set -gx TERM xterm-kitty
 
