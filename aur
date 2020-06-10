@@ -1,9 +1,6 @@
 gnome-shell-extension-appindicator-git
-megasync
-mullvad-vpn-bin
-nautilus-megasync
-rtl88x2bu-dkms-git
-spotify
-stack-bin
+gnome-shell-extension-unite-git
 protonmail-bridge
-birdtray
+birdtray-git
+spotify
+megasync
