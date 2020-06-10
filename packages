@@ -23,7 +23,6 @@ gnome-session
 gnome-settings-daemon
 gnome-shell
 gnome-shell-extensions
-gnome-terminal
 gnome-tweaks
 gvfs
 gvfs-mtp
@@ -69,3 +68,4 @@ xdg-user-dirs-gtk
 z3
 signal-desktop
 thunderbird
+kitty
