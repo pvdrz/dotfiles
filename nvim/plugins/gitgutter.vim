@@ -9,3 +9,5 @@ highlight link GitGutterChangeDeleteLineNr DiffChange
 let g:gitgutter_highlight_linenrs = 1
 " do not load key mappings
 let g:gitgutter_map_keys = 0
+" make updates faster
+set updatetime=100

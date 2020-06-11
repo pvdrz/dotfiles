@@ -42,9 +42,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " move to next/previous buffer
 noremap <A-Right> :bn<CR>
 noremap <A-Left> :bp<CR>
-" move to next/previous git change
-nmap <leader>c <Plug>(GitGutterNextHunk)
-nmap <leader>C <Plug>(GitGutterPrevHunk)
 " move to the upper/lower split
 noremap <A-Up> <C-w><Up>
 noremap <A-Down> <C-w><Down>
