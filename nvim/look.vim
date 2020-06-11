@@ -8,7 +8,7 @@ colorscheme challenger_deep
 set number relativenumber
 " highlight current line
 set cursorline
-" Wrap lines for quickfix list
+" wrap lines for quickfix list
 augroup quickfix
     autocmd!
     autocmd FileType qf setlocal wrap
