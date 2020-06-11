@@ -11,7 +11,7 @@ map s <nop>
 " toggle comments
 map <F3> <Plug>NERDCommenterToggle
 " call formatting
-nnoremap <F5> :call LanguageClient#textDocument_formatting_sync()<CR>
+nnoremap <silent> <F5> <cmd>lua vim.lsp.buf.formatting()<CR>
 
 " ----------------
 " lsp key mappings
