@@ -41,7 +41,7 @@ networkmanager
 noto-fonts
 openssh
 pkgfile
-python-pip
+python-neovim
 python-pygments
 transmission-gtk
 ripgrep

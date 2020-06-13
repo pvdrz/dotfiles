@@ -10,31 +10,22 @@ command! -bar -nargs=* -complete=file -range=% -bang WQ <line1>,<line2>wq<bang> 
 map s <nop>
 " toggle comments
 map <F3> <Plug>NERDCommenterToggle
-" call formatting
-nnoremap <silent> <F5> <cmd>lua vim.lsp.buf.formatting()<CR>
 
 " ----------------
 " lsp key mappings
 " ----------------
-noremap <silent> <leader>d <cmd>lua vim.lsp.buf.definition()<CR>
-noremap <silent> <leader>t <cmd>lua vim.lsp.buf.type_definition()<CR>
-noremap <silent> <leader>r <cmd>lua vim.lsp.buf.references()<CR>
-noremap <silent> <leader>m <cmd>lua vim.lsp.buf.hover()<CR>
-noremap <silent> <leader>d <cmd>lua vim.lsp.buf.definition()<CR>
+nmap <leader>d :call LanguageClient#textDocument_definition()<CR>
+nmap <leader>t :call LanguageClient#textDocument_typeDefinition()<CR>
+nmap <leader>r :call LanguageClient_textDocument_references()<CR>
+nmap <leader>m :call LanguageClient_textDocument_hover()<CR>
+nmap <leader>f :call LanguageClient#textDocument_formatting_sync()<CR>
 
 " ---------------
-" lsp diagnostics
+" quickfix
 " ---------------
-noremap <silent> <leader>e <cmd>lua vim.lsp.util.show_line_diagnostics()<CR>
-noremap <silent> <leader>n <cmd>NextDiagnosticCycle<CR>
-noremap <silent> <leader>p <cmd>PrevDiagnosticCycle<CR>
-
-" ----------
-" completion
-" ----------
-" use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+nmap <leader>n <Plug>(qf_qf_next)
+nmap <leader>p <Plug>(qf_qf_previous)
+nmap <F4> <Plug>(qf_qf_toggle)
 
 " ---------
 " navigation
