@@ -17,5 +17,7 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'cespare/vim-toml'
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
