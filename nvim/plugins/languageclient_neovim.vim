@@ -8,7 +8,7 @@ let g:LanguageClient_serverCommands.rust = ["rust-analyzer"]
 let g:LanguageClient_serverCommands.elixir = ["elixir-ls"]
 " use underline highlight for diagnostics
 let g:LanguageClient_diagnosticsDisplay = {}
-let g:LanguageClient_diagnosticsDisplay.1 = {"name": "Error", "texthl": "Underlined"}
-let g:LanguageClient_diagnosticsDisplay.2 = {"name": "Warning", "texthl": "Underlined"}
-let g:LanguageClient_diagnosticsDisplay.3 = {"name": "Information", "texthl": "Underlined"}
-let g:LanguageClient_diagnosticsDisplay.4 = {"name": "Hint", "texthl": "Underlined"}
+let g:LanguageClient_diagnosticsDisplay.1 = {"name": "Error", "texthl": "LSPDiagnosticsError"}
+let g:LanguageClient_diagnosticsDisplay.2 = {"name": "Warning", "texthl": "LSPDiagnosticsWarning"}
+let g:LanguageClient_diagnosticsDisplay.3 = {"name": "Information", "texthl": "LSPDiagnosticsInformation"}
+let g:LanguageClient_diagnosticsDisplay.4 = {"name": "Hint", "texthl": "LSPDiagnosticsHint"}

@@ -6,7 +6,7 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'romainl/vim-qf'
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'arcticicestudio/nord-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'machakann/vim-sandwich'
 Plug 'cohama/lexima.vim'

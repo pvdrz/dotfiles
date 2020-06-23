@@ -1,6 +1,6 @@
 let g:lightline = {}
 " set theme
-let g:lightline.colorscheme = "challenger_deep"
+let g:lightline.colorscheme = "nord"
 " use angled separators
 let g:lightline.separator = { "left": "", "right": "" }
 let g:lightline.subseparator = { "left": "", "right": "" }
