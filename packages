@@ -27,7 +27,7 @@ gnome-tweaks
 gvfs
 gvfs-mtp
 htop
-intel-ucode
+amd-ucode
 iw
 lib32-vulkan-icd-loader
 linux
@@ -62,7 +62,7 @@ tracker
 tracker-miners
 vlc
 vulkan-icd-loader
-vulkan-intel
+amdvlk
 wl-clipboard
 xdg-user-dirs-gtk
 z3
@@ -71,3 +71,5 @@ thunderbird
 kitty
 elixir
 erlang
+rust-analyzer
+arc-gtk-theme
