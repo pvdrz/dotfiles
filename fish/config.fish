@@ -43,33 +43,3 @@ function tw --wraps=task
         clear; task $argv
     end
 end
-
-# Install rustup toolchain
-function toolchain-install
-    rustup-toolchain-install-master -f (cat ./rust-version) -c rust-src rustc-dev -n $argv[1]
-end
-
-# Update rustup toolchain
-function toolchain-update
-    set name $argv[1]
-    set old_hash (rustup run $name rustc --version --verbose | rg "commit-hash: (.{40})" -r '$1')
-
-    if test -z $old_hash
-        echo "toolchain $name not found" 1>&2
-        return 1
-    end
-
-    set new_hash (cat ./rust-version)
-
-    if test $old_hash != $new_hash
-        rustup-toolchain-install-master -f $new_hash -c rust-src rustc-dev -n $name
-    else
-        echo "toolchain $name is up to date"
-    end
-end
-
-function killpci
-    sudo modprobe -r ath10k_pci
-    sudo modprobe -r ath10k_core
-    sudo modprobe -r ath
-end
