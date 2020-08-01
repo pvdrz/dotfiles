@@ -68,7 +68,7 @@ xdg-user-dirs-gtk
 z3
 signal-desktop
 thunderbird
-kitty
+alacritty
 elixir
 erlang
 rust-analyzer
