@@ -43,3 +43,6 @@ function tw --wraps=task
         clear; task $argv
     end
 end
+# ghcup-env
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
+test -f /home/christianpoveda//.ghcup/env ; and set -gx PATH $HOME/.cabal/bin /home/christianpoveda//.ghcup/bin/bin $PATH
