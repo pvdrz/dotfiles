@@ -40,9 +40,6 @@ noremap <A-Down> <C-w><Down>
 " -------
 " edition
 " -------
-" insert line without entering insert mode
-nnoremap o o<Esc>
-nnoremap O O<Esc>
 " use blackhole register for the next action
 map <leader>b "_
 " use backspace to delete to blackhole register
