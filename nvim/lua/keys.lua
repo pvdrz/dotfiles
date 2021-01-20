@@ -5,7 +5,7 @@ vim.g.mapleader = ","
 -- remap U to u
 vim.api.nvim_set_keymap('', 'U', 'u', { noremap = true })
 -- remap :W to :w
--- FIXME: Remove vimscript.
+-- FIXME: Remove vimscript (Blocked on https://github.com/neovim/neovim/pull/11613).
 vim.api.nvim_command('command! -bar -nargs=* -complete=file -range=% -bang W <line1>,<line2>write<bang> <args>')
 vim.api.nvim_command('command! -bar -nargs=* -complete=file -range=% -bang Wq <line1>,<line2>wq<bang> <args>')
 vim.api.nvim_command('command! -bar -nargs=* -complete=file -range=% -bang WQ <line1>,<line2>wq<bang> <args>')
@@ -36,7 +36,7 @@ vim.api.nvim_set_keymap('', '<BS>', '"_d', {})
 
 -- Code Completion
 
--- FIXME: Remove vimscript.
+-- use Tab and S-Tab to traverse completions
 vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { noremap = true, expr = true })
 vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', { noremap = true, expr = true })
 

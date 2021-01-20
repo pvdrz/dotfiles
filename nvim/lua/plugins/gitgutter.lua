@@ -1,7 +1,7 @@
 -- never show sign column
 vim.api.nvim_set_option('signcolumn', 'no')
 -- set gitgutter highlights for line number
--- FIXME: Remove vimscript.
+-- FIXME: Remove vimscript (Blocked on https://github.com/neovim/neovim/issues/9876).
 vim.api.nvim_command('highlight link GitGutterAddLineNr DiffAdd')
 vim.api.nvim_command('highlight link GitGutterChangeLineNr DiffChange')
 vim.api.nvim_command('highlight link GitGutterDeleteLineNr DiffDelete')

@@ -4,14 +4,13 @@ vim.api.nvim_set_var("LanguageClient_useVirtualText", "No")
 vim.api.nvim_set_var("LanguageClient_diagnosticsSignsMax", 0)
 -- set language servers
 vim.api.nvim_set_var("LanguageClient_serverCommands", {
-    -- rust = {"rust-analyzer", "--logfile=/home/christian/ra.log"},
-    rust = {"rustup", "run", "stable", "rls"},
+    rust = {"rust-analyzer"},
     elixir = {"elixir-ls"},
+    tex = {"texlab"},
 })
--- use underline highlight for diagnostics
-vim.api.nvim_set_var("LanguageClient_diagnosticsDisplay", {
-    [1] = {name = "Error", texthl = "LSPDiagnosticsError"},
-    [2] = {name = "Warning", texthl = "LSPDiagnosticsWarning"},
-    [3] = {name = "Information", texthl = "LSPDiagnosticsInformation"},
-    [4] = {name = "Hint", texthl = "LSPDiagnosticsHint"},
+
+vim.api.nvim_set_var("LanguageClient_settingsPath", "/home/christian/.config/nvim/settings.json")
+
+vim.api.nvim_set_var("LanguageClient_rootMarkers", {
+    elixir = {"mix.exs"},
 })
