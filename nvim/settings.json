@@ -1,0 +1,9 @@
+{
+    "latex.build.executable": "tectonic",
+    "latex.build.args": [
+        "%f",
+        "--synctex",
+        "--keep-logs",
+        "--keep-intermediates"
+    ]
+}
