@@ -1,3 +1,6 @@
+env:
+  TERM: alacritty
+
 window:
   decorations: full
   gtk_theme_variant: dark

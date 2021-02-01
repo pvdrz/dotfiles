@@ -11,8 +11,6 @@ set -gx PATH $HOME/.cargo/bin $PATH
 set -gx GHCUP_INSTALL_BASE_PREFIX $HOME
 set -gx PATH $HOME/.cabal/bin $GHCUP_INSTALL_BASE_PREFIX/.ghcup/bin $PATH
 
-set -gx TERM alacritty
-
 # sudoedit is too long
 alias svim sudoedit
 

@@ -1,5 +1,3 @@
--- enable true colors
-vim.api.nvim_set_option('termguicolors', true)
 -- show tabline
 vim.api.nvim_set_option('showtabline', 2)
 -- set theme
