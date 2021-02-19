@@ -18,7 +18,7 @@ return require('packer').startup(function()
         run = ':UpdateRemotePlugins',
     }
     use 'romainl/vim-qf'
-    use 'arcticicestudio/nord-vim'
+    use {'dracula/vim', as = 'dracula'}
     use 'jeffkreeftmeijer/vim-numbertoggle'
     use 'machakann/vim-sandwich'
     use 'cohama/lexima.vim'
