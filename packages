@@ -1,4 +1,3 @@
-adobe-source-code-pro-fonts
 baobab
 cheese
 cmake
@@ -43,7 +42,6 @@ noto-fonts
 openssh
 pkgfile
 python-neovim
-python-pygments
 transmission-gtk
 ripgrep
 rustup
@@ -71,3 +69,4 @@ tmux
 pipewire
 xdg-desktop-portal
 xdg-desktop-portal-gtk
+ttf-fira-code

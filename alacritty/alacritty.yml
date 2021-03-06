@@ -10,8 +10,7 @@ scrolling:
 
 font:
   normal:
-    family: Source Code Pro
-    style: Semibold
+    family: Fira Code
   size: 10.0
 
 key_bindings:
