@@ -38,7 +38,6 @@ mutter
 nautilus
 neovim
 networkmanager
-noto-fonts
 openssh
 pkgfile
 python-neovim
@@ -70,3 +69,5 @@ pipewire
 xdg-desktop-portal
 xdg-desktop-portal-gtk
 ttf-fira-code
+bluez
+bluez-util
