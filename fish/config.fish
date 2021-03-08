@@ -7,9 +7,6 @@ alias vi nvim
 set -gx PATH $HOME/.local/bin $PATH
 # for cargo binaries
 set -gx PATH $HOME/.cargo/bin $PATH
-# for haskell binaries
-set -gx GHCUP_INSTALL_BASE_PREFIX $HOME
-set -gx PATH $HOME/.cabal/bin $GHCUP_INSTALL_BASE_PREFIX/.ghcup/bin $PATH
 
 # sudoedit is too long
 alias svim sudoedit
@@ -19,28 +16,5 @@ function check-sync
     watch grep -e Dirty: -e Writeback: /proc/meminfo
 end
 
-# Sync git forks
-function sync-fork
-    git fetch upstream
-    git checkout master
-    git merge upstream/master
-    git push
-end
-
 # Remove greeting
 set -gx fish_greeting ""
-
-# Dank task wrapper (done by zombiefungus)
-function tw --wraps=task
-    set modifiers 'mod' 'modify' 'del' 'delete' 'done' 'start' 'stop' 'ann' 'annotate' 'append' 'denotate' 'duplicate' 'edit'
-    set others 'add' 'undo'
-    if contains $argv[1] $others; or contains $argv[2] $modifiers;
-        task $argv rc._forcecolor=on 2>&1 | tee /tmp/taskcout
-        clear; task; cat /tmp/taskcout | grep -v forcecolor
-    else
-        clear; task $argv
-    end
-end
-# ghcup-env
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
-test -f /home/christianpoveda//.ghcup/env ; and set -gx PATH $HOME/.cabal/bin /home/christianpoveda//.ghcup/bin/bin $PATH
