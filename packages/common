@@ -68,3 +68,5 @@ man-db
 man-pages
 texinfo
 xfsprogs
+fakeroot
+make
