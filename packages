@@ -71,3 +71,6 @@ xdg-desktop-portal-gtk
 ttf-fira-code
 bluez
 bluez-util
+man-db
+man-pages
+texinfo
