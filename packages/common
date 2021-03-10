@@ -29,7 +29,6 @@ linux-firmware
 linux-headers
 mutter
 nautilus
-neovim
 networkmanager
 openssh
 pkgfile
@@ -57,6 +56,7 @@ discord
 alacritty
 tmux
 pipewire
+pipewire-pulse
 xdg-desktop-portal
 xdg-desktop-portal-gtk
 ttf-fira-code
