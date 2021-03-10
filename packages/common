@@ -8,7 +8,6 @@ sd
 file-roller
 firefox
 fish
-gcc
 gdm
 git
 gnome-calculator
@@ -39,7 +38,6 @@ transmission-gtk
 ripgrep
 rustup
 steam
-sudo
 sushi
 time
 tracker
@@ -66,5 +64,5 @@ bluez
 bluez-utils
 man-db
 man-pages
-texinfo
 xfsprogs
+base-devel
