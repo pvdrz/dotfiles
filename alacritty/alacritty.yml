@@ -10,7 +10,7 @@ scrolling:
 
 font:
   normal:
-    family: Cascadia Code
+    family: Source Code Pro
     style: SemiBold
   size: 10.0
 
