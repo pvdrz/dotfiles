@@ -59,7 +59,7 @@ pipewire
 pipewire-pulse
 xdg-desktop-portal
 xdg-desktop-portal-gtk
-ttf-fira-code
+otf-cascadia-code
 bluez
 bluez-utils
 man-db

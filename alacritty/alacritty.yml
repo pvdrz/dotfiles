@@ -10,8 +10,8 @@ scrolling:
 
 font:
   normal:
-    family: Fira Code
-    style: Retina
+    family: Cascadia Code
+    style: SemiBold
   size: 10.0
 
 key_bindings:
