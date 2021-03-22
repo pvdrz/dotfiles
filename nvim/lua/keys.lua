@@ -43,23 +43,27 @@ vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"'
 
 -- Quickfix
 
--- go to previous diagnostic
-vim.api.nvim_set_keymap('n', '<leader>p', '<Plug>(qf_qf_previous)', {})
--- go to next diagnostic
-vim.api.nvim_set_keymap('n', '<leader>n', '<Plug>(qf_qf_next)', {})
 -- toggle the quickfix buffer
 vim.api.nvim_set_keymap('n', '<F4>', '<Plug>(qf_qf_toggle)', {})
 
-
--- Language client
+-- Language Server Protocol
 
 -- go to definition
-vim.api.nvim_set_keymap('n', '<leader>d', ':call LanguageClient#textDocument_definition()<CR>', { })
+vim.api.nvim_set_keymap('n', '<leader>d', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
 -- go to type definition
-vim.api.nvim_set_keymap('n', '<leader>t', ':call LanguageClient#textDocument_typeDefinition()<CR>', {})
--- show references in the quickfix list
-vim.api.nvim_set_keymap('n', '<leader>r', ':call LanguageClient_textDocument_references()<CR>', {})
+vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>lua vim.lsp.buf.type_definition()<CR>', { noremap = true, silent = true })
 -- show hover information
-vim.api.nvim_set_keymap('n', '<leader>m', ':call LanguageClient_textDocument_hover()<CR>', {})
+vim.api.nvim_set_keymap('n', '<leader>m', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 -- format the current buffer
-vim.api.nvim_set_keymap('n', '<leader>f', ':call LanguageClient#textDocument_formatting_sync()<CR>', {})
+vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
+-- show code actions
+vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
+
+-- Telescope
+
+-- show references
+vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>Telescope lsp_references<CR>', { noremap = true, silent = true })
+-- show diagnostics
+vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>Telescope lsp_workspace_diagnostics<CR>', { noremap = true, silent = true })
+-- show diagnostics
+vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>Telescope lsp_code_actions<CR>', { noremap = true, silent = true })

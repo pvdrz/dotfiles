@@ -5,7 +5,7 @@ vim.api.nvim_set_option('backup', false)
 -- no swap files
 vim.api.nvim_set_option('swapfile', false)
 -- close preview/scratch window
-vim.api.nvim_set_option('completeopt', 'menu')
+vim.api.nvim_set_option('completeopt', 'menuone,noselect')
 -- enable mouse
 vim.api.nvim_set_option('mouse', 'a')
 -- enable system clipboard

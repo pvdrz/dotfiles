@@ -6,15 +6,8 @@ return require('packer').startup(function()
     use 'justinmk/vim-dirvish'
     use 'itchyny/lightline.vim'
     use 'mengelbrecht/lightline-bufferline'
-    use {
-        'autozimu/LanguageClient-neovim',
-        branch = 'next',
-        run = 'bash install.sh',
-    }
-    use {
-        'Shougo/deoplete.nvim',
-        run = ':UpdateRemotePlugins',
-    }
+    use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/nvim-compe'
     use 'romainl/vim-qf'
     use {
         'dracula/vim',
@@ -33,5 +26,12 @@ return require('packer').startup(function()
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
+    }
+    use {
+	'nvim-telescope/telescope.nvim',
+	requires = {
+	    {'nvim-lua/popup.nvim'},
+	    {'nvim-lua/plenary.nvim'},
+	},
     }
 end)
