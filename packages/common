@@ -56,7 +56,7 @@ discord
 alacritty
 tmux
 pipewire
-pipewire-pulse
+pulseaudio
 xdg-desktop-portal
 xdg-desktop-portal-gtk
 adobe-source-code-pro-fonts
