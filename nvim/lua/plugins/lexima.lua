@@ -1,2 +1,2 @@
--- enable basic rules
-vim.api.nvim_set_var('lexima_enable_basic_rules', 1)
+-- Disable default rules
+vim.api.nvim_set_var('lexima_no_default_rules', true)

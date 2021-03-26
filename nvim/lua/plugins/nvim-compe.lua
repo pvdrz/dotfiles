@@ -1,4 +1,4 @@
-require'compe'.setup {
+require'compe'.setup({
   enabled = true;
   autocomplete = true;
   debug = false;
@@ -11,17 +11,12 @@ require'compe'.setup {
   max_kind_width = 100;
   max_menu_width = 100;
   documentation = true;
-
   source = {
     path = true;
     buffer = true;
     calc = true;
-    vsnip = true;
     nvim_lsp = true;
     nvim_lua = true;
-    spell = true;
-    tags = true;
-    snippets_nvim = true;
-    treesitter = true;
+    vsnip = true;
   };
-}
+})

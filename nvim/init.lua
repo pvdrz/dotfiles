@@ -1,12 +1,5 @@
-require('plugins')
 require('keys')
 require('look')
 require('misc')
 
-require('plugins.nerdcommenter')
-require('plugins.gitgutter')
-require('plugins.lexima')
-require('plugins.lightline')
-require('plugins.nvim-compe')
-require('plugins.nvim-lspconfig')
-require('plugins.nvim-treesitter')
+require('plugins')

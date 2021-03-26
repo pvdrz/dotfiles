@@ -36,15 +36,57 @@ vim.api.nvim_set_keymap('', '<BS>', '"_d', {})
 
 -- Code Completion
 
--- use Tab and S-Tab to traverse completions
-vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { noremap = true, expr = true })
-vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', { noremap = true, expr = true })
+-- use Tab and S-Tab to traverse completions and snippet's placeholders
+local t = function(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
 
+local check_back_space = function()
+    local col = vim.fn.col('.') - 1
+    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+        return true
+    else
+        return false
+    end
+end
+
+_G.tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t "<C-n>"
+  elseif vim.fn.call("vsnip#available", {1}) == 1 then
+    return t "<Plug>(vsnip-expand-or-jump)"
+  elseif check_back_space() then
+    return t "<Tab>"
+
+  else
+    return vim.fn['compe#complete']()
+  end
+end
+
+_G.s_tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t "<C-p>"
+  elseif vim.fn.call("vsnip#jumpable", {-1}) == 1 then
+    return t "<Plug>(vsnip-jump-prev)"
+  else
+    return t "<S-Tab>"
+  end
+end
+
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+
+vim.api.nvim_call_function('lexima#set_default_rules', {});
+vim.api.nvim_set_keymap("i", "<C-Space>", "compe#complete()", {noremap = true, silent = true, expr = true})
+vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm(lexima#expand('<LT>CR>', 'i'))", {noremap = true, silent = true, expr = true})
 
 -- Quickfix
 
 -- toggle the quickfix buffer
 vim.api.nvim_set_keymap('n', '<F4>', '<Plug>(qf_qf_toggle)', {})
+
 
 -- Language Server Protocol
 
@@ -56,14 +98,15 @@ vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>lua vim.lsp.buf.type_definition(
 vim.api.nvim_set_keymap('n', '<leader>m', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 -- format the current buffer
 vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
--- show code actions
-vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
+
 
 -- Telescope
 
 -- show references
 vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>Telescope lsp_references<CR>', { noremap = true, silent = true })
--- show diagnostics
+-- show workspace diagnostics
 vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>Telescope lsp_workspace_diagnostics<CR>', { noremap = true, silent = true })
--- show diagnostics
+-- show document diagnostics
+vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Telescope lsp_document_diagnostics<CR>', { noremap = true, silent = true })
+-- show code actions
 vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>Telescope lsp_code_actions<CR>', { noremap = true, silent = true })

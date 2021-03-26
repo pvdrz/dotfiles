@@ -1,4 +1,6 @@
 {
+
+
     "latex.build.executable": "tectonic",
     "latex.build.args": [
         "%f",
