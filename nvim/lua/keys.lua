@@ -14,7 +14,8 @@ vim.api.nvim_command('command! -bar -nargs=* -complete=file -bang Q q<bang>')
 vim.api.nvim_set_keymap('', 's', '', {})
 -- toggle comments
 vim.api.nvim_set_keymap('', '<F3>', '<Plug>NERDCommenterToggle', {})
-
+-- exit terminal mode using ESC
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
 
 -- Navigation
 
@@ -36,7 +37,6 @@ vim.api.nvim_set_keymap('', '<BS>', '"_d', {})
 
 -- Code Completion
 
--- use Tab and S-Tab to traverse completions and snippet's placeholders
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
@@ -73,6 +73,7 @@ _G.s_tab_complete = function()
   end
 end
 
+-- use Tab and S-Tab to traverse completions and snippet's placeholders
 vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
@@ -98,6 +99,10 @@ vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>lua vim.lsp.buf.type_definition(
 vim.api.nvim_set_keymap('n', '<leader>m', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 -- format the current buffer
 vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
+-- rename the current identifier
+vim.api.nvim_set_keymap('n', '<leader>c', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
+-- show diagnostics for the current line
+vim.api.nvim_set_keymap('n', '<leader>l', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', { noremap = true, silent = true })
 
 
 -- Telescope
