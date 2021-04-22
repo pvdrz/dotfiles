@@ -10,9 +10,12 @@ scrolling:
 
 font:
   normal:
-    family: Source Code Pro
-    style: SemiBold
-  size: 10.0
+    family: VGA
+    style: Medium
+  bold:
+    family: VGA
+    style: Medium
+  size: 12.0
 
 key_bindings:
   - { key: N,      mods: Shift|Control,            action: SpawnNewInstance }
