@@ -53,4 +53,9 @@ return require('packer').startup(function()
         }
     }
     use 'hrsh7th/vim-vsnip'
+    use 'ziglang/zig.vim'
+    use {
+        'voldikss/vim-floaterm',
+        config = function() require('plugins.vim-floaterm') end
+    }
 end)

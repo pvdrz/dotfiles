@@ -16,6 +16,8 @@ vim.api.nvim_set_keymap('', 's', '', {})
 vim.api.nvim_set_keymap('', '<F3>', '<Plug>NERDCommenterToggle', {})
 -- exit terminal mode using ESC
 vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+vim.api.nvim_set_keymap('t', '<F2>', '<C-\\><C-n>:FloatermToggle<CR>', { noremap = true })
+vim.api.nvim_set_keymap('', '<F2>', ':FloatermToggle<CR>', { noremap = true })
 
 -- Navigation
 
