@@ -8,6 +8,9 @@ set -gx PATH $HOME/.local/bin $PATH
 # for cargo binaries
 set -gx PATH $HOME/.cargo/bin $PATH
 
+set -gx GOPATH $HOME/Workspace/go
+set -gx PATH $GOPATH/bin $PATH
+
 # sudoedit is too long
 alias svim sudoedit
 
