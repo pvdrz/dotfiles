@@ -19,8 +19,8 @@ return require('packer').startup(function()
     }
     use 'romainl/vim-qf'
     use {
-        'pineapplegiant/spaceduck',
- 	    branch = 'main',
+        'dracula/vim',
+        as = 'dracula'
     }
     use 'jeffkreeftmeijer/vim-numbertoggle'
     use 'machakann/vim-sandwich'

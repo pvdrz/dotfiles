@@ -1,7 +1,9 @@
 -- show tabline
 vim.api.nvim_set_option('showtabline', 2)
 -- set theme
-vim.cmd('colorscheme spaceduck')
+vim.cmd('colorscheme dracula')
+-- do not use italics for dracula
+vim.api.nvim_set_var('dracula_italic', 0)
 -- set termguicolors
 vim.api.nvim_set_option('termguicolors', true)
 -- set line numbers to relative so numbertoggle works as intended
