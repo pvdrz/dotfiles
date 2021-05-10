@@ -1,5 +1,7 @@
 -- show tabline
 vim.api.nvim_set_option('showtabline', 2)
+-- get better colors (this must happen before setting the colorscheme)
+vim.api.nvim_set_var('dracula_colorterm', 0)
 -- set theme
 vim.cmd('colorscheme dracula')
 -- do not use italics for dracula
