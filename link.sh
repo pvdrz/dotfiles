@@ -41,12 +41,6 @@ function nvim_config() {
     fi
 }
 
-function tmux_config() {
-    echo ""
-    echo Configuring tmux...
-    clean_and_symlink $(pwd)/tmux/tmux.conf ~/.tmux.conf
-}
-
 function gnome_config() {
     echo ""
     echo Configuring gnome...
@@ -55,7 +49,6 @@ function gnome_config() {
 }
 
 fish_config
-alacritty_config
 nvim_config
 tmux_config
 gnome_config

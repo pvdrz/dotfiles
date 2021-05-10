@@ -57,7 +57,6 @@ rust-analyzer
 arc-gtk-theme
 discord
 alacritty
-tmux
 pipewire
 pulseaudio
 xdg-desktop-portal
