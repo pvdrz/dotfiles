@@ -1,6 +1,6 @@
-intel-ucode
-vulkan-intel
-lib32-vulkan-intel
+amd-ucode
+vulkan-radeon
+lib32-vulkan-radeon
 baobab
 cheese
 cmake
@@ -23,18 +23,16 @@ gnome-shell
 gnome-shell-extensions
 gnome-tweaks
 gnome-calendar
-gvfs-mtp
 htop
 iw
 lib32-vulkan-icd-loader
-linux
+linux-zen
 linux-firmware
-linux-headers
+linux-zen-headers
 mutter
 nautilus
 networkmanager
 openssh
-pkgfile
 python-neovim
 transmission-gtk
 ripgrep
@@ -48,9 +46,7 @@ vlc
 vulkan-icd-loader
 wl-clipboard
 xdg-user-dirs-gtk
-z3
 signal-desktop
-thunderbird
 elixir
 erlang
 rust-analyzer
@@ -58,10 +54,9 @@ arc-gtk-theme
 discord
 alacritty
 pipewire
-pulseaudio
+pipewire-pulse
 xdg-desktop-portal
 xdg-desktop-portal-gtk
-adobe-source-code-pro-fonts
 bluez
 bluez-utils
 man-db
@@ -69,3 +64,4 @@ man-pages
 xfsprogs
 base-devel
 gnome-shell-extension-appindicator
+ttf-jetbrains-mono
