@@ -10,12 +10,9 @@ scrolling:
 
 font:
   normal:
-    family: VGA
+    family: Jetbrains Mono
     style: Medium
-  bold:
-    family: VGA
-    style: Medium
-  size: 12.0
+  size: 10.0
 
 key_bindings:
   - { key: N,      mods: Shift|Control,            action: SpawnNewInstance }
