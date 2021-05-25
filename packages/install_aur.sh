@@ -2,11 +2,11 @@
 
 PKGS=$(cat $(pwd)/aur)
 
-if ! command -v pikaur; then
-    git clone https://aur.archlinux.org/pikaur.git /tmp/pikaur
-    cd /tmp/pikaur
+if ! command -v paru; then
+    git clone https://aur.archlinux.org/paru.git /tmp/paru
+    cd /tmp/paru
     makepkg -fsri
     cd $PWD
 fi
 
-pikaur -S $PKGS
+paru -S $PKGS

@@ -50,5 +50,4 @@ function gnome_config() {
 
 fish_config
 nvim_config
-tmux_config
 gnome_config
