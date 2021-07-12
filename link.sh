@@ -51,3 +51,4 @@ function gnome_config() {
 fish_config
 nvim_config
 gnome_config
+alacritty_config
