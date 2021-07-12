@@ -1,7 +1,5 @@
-gnome-shell-extension-appindicator-git
-gnome-shell-extension-unite-git
+	gnome-shell-extension-unite-git
 elixir-ls-git
 spotify
 megasync-bin
 nautilus-megasync
-neovim-git

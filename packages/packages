@@ -50,7 +50,6 @@ signal-desktop
 elixir
 erlang
 rust-analyzer
-arc-gtk-theme
 discord
 alacritty
 pipewire
