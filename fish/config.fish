@@ -21,3 +21,19 @@ end
 
 # Remove greeting
 set -gx fish_greeting ""
+
+# Print and run command
+function print_and_run
+    echo Running "`$argv`"...
+    $argv
+end
+
+# Check that crate is perfect
+function corgi
+    print_and_run cargo +nightly fmt --all &&
+    print_and_run cargo check --all-targets --all-features &&
+    print_and_run cargo clippy --all-targets --all-features &&
+    print_and_run cargo test --all-features &&
+    print_and_run cargo +nightly test --all-features &&
+    print_and_run cargo doc --all-features
+end
