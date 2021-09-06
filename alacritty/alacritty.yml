@@ -14,6 +14,8 @@ font:
     style: Medium
   size: 10.0
 
+mouse_bindings:
+  - { mouse: Middle, action: None  }
 key_bindings:
   - { key: N,      mods: Shift|Control,            action: SpawnNewInstance }
 colors:
