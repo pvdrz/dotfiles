@@ -31,3 +31,5 @@ lspconfig.gopls.setup({
 	},
     },
 })
+
+lspconfig.pylsp.setup({})
