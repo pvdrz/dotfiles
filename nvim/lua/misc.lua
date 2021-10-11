@@ -31,8 +31,7 @@ vim.api.nvim_buf_set_option(0, 'expandtab', true)
 -- FIXME: Remove vimscript (Blocked on: https://github.com/neovim/neovim/pull/12378).
 vim.api.nvim_command('autocmd Filetype tex setlocal tabstop=2 softtabstop=2 shiftwidth=2')
 vim.api.nvim_command('autocmd Filetype elixir setlocal tabstop=2softtabstop=2 shiftwidth-2')
--- use spaces instead of tabs
-vim.api.nvim_set_option('expandtab', true)
+
 -- adjust to the next indentation level
 vim.api.nvim_set_option('smarttab', true)
 -- disable netrw
