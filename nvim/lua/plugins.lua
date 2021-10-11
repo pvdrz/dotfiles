@@ -38,7 +38,10 @@ return require('packer').startup(function()
         config = function() require('plugins.gitgutter') end
     }
     use 'nelstrom/vim-visual-star-search'
-    use 'cespare/vim-toml'
+    use {
+        'cespare/vim-toml',
+        branch = 'main'
+    }
     use 'elixir-editors/vim-elixir'
     use {
         'nvim-treesitter/nvim-treesitter',
