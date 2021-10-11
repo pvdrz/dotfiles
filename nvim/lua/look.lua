@@ -14,4 +14,5 @@ vim.api.nvim_win_set_option(0, 'relativenumber', true)
 -- highlight current line
 vim.api.nvim_set_option('cursorline', true)
 -- hide number column from terminal buffers
+-- FIXME: Remove vimscript (Blocked on: https://github.com/neovim/neovim/pull/12378).
 vim.api.nvim_command('autocmd TermOpen * setlocal nonumber norelativenumber')
