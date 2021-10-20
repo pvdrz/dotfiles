@@ -9,10 +9,25 @@ lspconfig.rust_analyzer.setup({
         ["rust-analyzer"] = {
             rustcSource = "discover",
             cargo = {
-                loadOutDirsFromCheck = true
+                loadOutDirsFromCheck = true,
             },
             procMacro = {
-                enable = true
+                enable = true,
+            },
+            completion = {
+                snippets = {
+                    unsafe = {
+                        postfix = "unsafe",
+                        body = "unsafe { ${receiver} }",
+                        scope = "expr",
+                    },
+                    arc = {
+                        postfix = "arc",
+                        body = "Arc::new(${receiver})",
+                        scope = "expr",
+                        requires = "std::sync::Arc",
+                    },
+                }
             },
         }
     }
@@ -23,12 +38,12 @@ lspconfig.zls.setup({})
 lspconfig.gopls.setup({
     cmd = {'gopls', '--remote=auto'},
     settings = {
-	gopls = {
-	    analyses = {
-		unusedparams = true,
-	    },
-	    staticcheck = true,
-	},
+        gopls = {
+            analyses = {
+                unusedparams = true,
+            },
+            staticcheck = true,
+        },
     },
 })
 
