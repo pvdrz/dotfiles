@@ -28,12 +28,21 @@ function print_and_run
     $argv
 end
 
-# Check that crate is perfect
+# Check if crates are perfect
 function corgi
-    print_and_run cargo +nightly fmt --all &&
-    print_and_run cargo check --all-targets --all-features &&
-    print_and_run cargo clippy --all-targets --all-features &&
-    print_and_run cargo test --all-features &&
-    print_and_run cargo +nightly test --all-features &&
-    print_and_run cargo doc --all-features
+    if test -n "$argv"
+        print_and_run cargo +nightly fmt --all -p $argv &&
+        print_and_run cargo check --all-targets --all-features -p $argv &&
+        print_and_run cargo +nightly clippy --all-targets --all-features -p $argv &&
+        print_and_run cargo test --all-features -p $argv &&
+        print_and_run cargo +nightly test --all-features -p $argv &&
+        print_and_run cargo doc --all-features -p $argv
+    else
+        print_and_run cargo +nightly fmt --all &&
+        print_and_run cargo check --all-targets --all-features &&
+        print_and_run cargo +nightly clippy --all-targets --all-features &&
+        print_and_run cargo test --all-features &&
+        print_and_run cargo +nightly test --all-features &&
+        print_and_run cargo doc --all-features
+    end
 end
