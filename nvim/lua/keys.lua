@@ -101,6 +101,8 @@ vim.api.nvim_set_keymap('n', '<F4>', '<Plug>(qf_qf_toggle)', {})
 
 -- Language Server Protocol
 
+-- go to declaration
+vim.api.nvim_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.declaration()<CR>', { noremap = true, silent = true })
 -- go to definition
 vim.api.nvim_set_keymap('n', '<leader>d', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
 -- go to type definition
