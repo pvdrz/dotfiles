@@ -10,6 +10,7 @@ lspconfig.rust_analyzer.setup({
             rustcSource = "discover",
             cargo = {
                 loadOutDirsFromCheck = true,
+                allFeatures = true,
             },
             procMacro = {
                 enable = true,
