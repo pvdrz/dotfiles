@@ -1,11 +1,9 @@
 -- show tabline
 vim.api.nvim_set_option('showtabline', 2)
--- get better colors (this must happen before setting the colorscheme)
-vim.api.nvim_set_var('dracula_colorterm', 0)
--- do not use italics for dracula
-vim.api.nvim_set_var('dracula_italic', 0)
+-- use uniform background for nord
+vim.api.nvim_set_var('nord_uniform_diff_background', 1)
 -- set theme
-vim.cmd('colorscheme dracula')
+vim.cmd('colorscheme nord')
 -- set termguicolors
 vim.api.nvim_set_option('termguicolors', true)
 -- set line numbers to relative so numbertoggle works as intended

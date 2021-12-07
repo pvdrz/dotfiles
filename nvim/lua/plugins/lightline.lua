@@ -1,6 +1,6 @@
 vim.api.nvim_set_var("lightline", {
   -- set theme
-  colorscheme = "dracula",
+  colorscheme = "nord",
   -- use angled separators
   separator = { left = "", right = " " },
   subseparator = { left =  "", right = " " },

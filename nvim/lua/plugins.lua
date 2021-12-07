@@ -18,10 +18,7 @@ return require('packer').startup(function()
         config = function() require('plugins.nvim-compe') end
     }
     use 'romainl/vim-qf'
-    use {
-        'dracula/vim',
-        as = 'dracula'
-    }
+    use 'arcticicestudio/nord-vim'
     use 'jeffkreeftmeijer/vim-numbertoggle'
     use 'machakann/vim-sandwich'
     use {
