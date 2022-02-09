@@ -47,6 +47,9 @@ function corgi
     for cmd in $cmds
         for arg in $args
             print_and_run "$cmd$arg"
+            if test $status -ne 0
+                return -1
+            end
         end
     end
 end
