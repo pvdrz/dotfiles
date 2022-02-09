@@ -22,27 +22,33 @@ end
 # Remove greeting
 set -gx fish_greeting ""
 
-# Print and run command
-function print_and_run
-    echo Running "`$argv`"...
-    $argv
-end
-
 # Check if crates are perfect
 function corgi
+    function print_and_run
+        echo Running "`$argv`"...
+        eval $argv
+    end
+
+    set cmds "cargo +nightly fmt --all"
+    set cmds $cmds "cargo check --release --all-targets --all-features"
+    set cmds $cmds "cargo clippy --all-targets --all-features"
+    set cmds $cmds "cargo test --release --all-features"
+    set cmds $cmds "cargo doc --all-features"
+
+    set args
     if test -n "$argv"
-        print_and_run cargo +nightly fmt --all -p $argv &&
-        print_and_run cargo check --all-targets --all-features -p $argv &&
-        print_and_run cargo +nightly clippy --all-targets --all-features -p $argv &&
-        print_and_run cargo test --all-features -p $argv &&
-        print_and_run cargo +nightly test --all-features -p $argv &&
-        print_and_run cargo doc --all-features -p $argv
+        for arg in $argv
+            set args $args " -p $arg"
+        end
     else
-        print_and_run cargo +nightly fmt --all &&
-        print_and_run cargo check --all-targets --all-features &&
-        print_and_run cargo +nightly clippy --all-targets --all-features &&
-        print_and_run cargo test --all-features &&
-        print_and_run cargo +nightly test --all-features &&
-        print_and_run cargo doc --all-features
+        set args $args ""
+    end
+
+    echo $args
+
+    for cmd in $cmds
+        for arg in $args
+            print_and_run "$cmd$arg"
+        end
     end
 end
