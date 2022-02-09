@@ -44,8 +44,6 @@ function corgi
         set args $args ""
     end
 
-    echo $args
-
     for cmd in $cmds
         for arg in $args
             print_and_run "$cmd$arg"
