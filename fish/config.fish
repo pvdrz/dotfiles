@@ -7,6 +7,7 @@ alias vi nvim
 set -gx PATH $HOME/.local/bin $PATH
 # for cargo binaries
 set -gx PATH $HOME/.cargo/bin $PATH
+set -gx SCCACHE_CACHE_SIZE "30G"
 
 set -gx GOPATH $HOME/Workspace/go
 set -gx PATH $GOPATH/bin $PATH
