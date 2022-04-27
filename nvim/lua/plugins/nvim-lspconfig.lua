@@ -11,12 +11,28 @@ lspconfig.rust_analyzer.setup({
             cargo = {
                 loadOutDirsFromCheck = true,
                 allFeatures = true,
+                runBuildScripts = true,
             },
             procMacro = {
                 enable = true,
             },
             completion = {
                 snippets = {
+                    some = {
+                        postfix = "some",
+                        body = "Some(${receiver})",
+                        scope = "expr",
+                    },
+                    ok = {
+                        postfix = "ok",
+                        body = "Ok(${receiver})",
+                        scope = "expr",
+                    },
+                    err = {
+                        postfix = "err",
+                        body = "Err(${receiver})",
+                        scope = "expr",
+                    },
                     unsafe = {
                         postfix = "unsafe",
                         body = "unsafe { ${receiver} }",
@@ -47,5 +63,7 @@ lspconfig.gopls.setup({
         },
     },
 })
+
+lspconfig.clangd.setup({})
 
 lspconfig.pylsp.setup({})
