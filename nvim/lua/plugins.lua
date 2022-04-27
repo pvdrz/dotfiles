@@ -52,7 +52,12 @@ return require('packer').startup(function()
             'nvim-lua/plenary.nvim',
         }
     }
-    use 'hrsh7th/vim-vsnip'
+    use {
+        'hrsh7th/vim-vsnip',
+        requires = {
+            'hrsh7th/vim-vsnip-integ',
+        }
+    }
     use 'ziglang/zig.vim'
     use {
         'voldikss/vim-floaterm',
