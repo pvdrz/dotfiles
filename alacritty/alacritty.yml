@@ -2,8 +2,8 @@ env:
   TERM: alacritty
 
 window:
-  decorations: full
-  gtk_theme_variant: dark
+  decorations: none
+  gtk_theme_variant: None
 
 scrolling:
   history: 10000
