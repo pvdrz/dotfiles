@@ -39,7 +39,6 @@ return require('packer').startup(function()
         'cespare/vim-toml',
         branch = 'main'
     }
-    use 'elixir-editors/vim-elixir'
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
@@ -58,7 +57,6 @@ return require('packer').startup(function()
             'hrsh7th/vim-vsnip-integ',
         }
     }
-    use 'ziglang/zig.vim'
     use {
         'voldikss/vim-floaterm',
         config = function() require('plugins.vim-floaterm') end
