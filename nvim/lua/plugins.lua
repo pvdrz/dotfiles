@@ -61,4 +61,5 @@ return require('packer').startup(function()
         'voldikss/vim-floaterm',
         config = function() require('plugins.vim-floaterm') end
     }
+    use 'stevearc/dressing.nvim'
 end)

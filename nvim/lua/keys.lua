@@ -113,6 +113,8 @@ vim.api.nvim_set_keymap('n', '<leader>m', '<cmd>lua vim.lsp.buf.hover()<CR>', { 
 vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
 -- rename the current identifier
 vim.api.nvim_set_keymap('n', '<leader>c', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
+-- show code actions
+vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
 -- show diagnostics for the current line
 vim.api.nvim_set_keymap('n', '<leader>l', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', { noremap = true, silent = true })
 
@@ -125,5 +127,3 @@ vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>Telescope lsp_references<CR>', {
 vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
 -- show document diagnostics
 vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Telescope diagnostics bufnr=0<CR>', { noremap = true, silent = true })
--- show code actions
-vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>Telescope lsp_code_actions<CR>', { noremap = true, silent = true })
