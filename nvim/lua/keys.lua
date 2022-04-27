@@ -122,8 +122,8 @@ vim.api.nvim_set_keymap('n', '<leader>l', '<cmd>lua vim.lsp.diagnostic.show_line
 -- show references
 vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>Telescope lsp_references<CR>', { noremap = true, silent = true })
 -- show workspace diagnostics
-vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>Telescope lsp_workspace_diagnostics<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
 -- show document diagnostics
-vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Telescope lsp_document_diagnostics<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Telescope diagnostics bufnr=0<CR>', { noremap = true, silent = true })
 -- show code actions
 vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>Telescope lsp_code_actions<CR>', { noremap = true, silent = true })
