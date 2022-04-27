@@ -50,20 +50,6 @@ lspconfig.rust_analyzer.setup({
     }
 })
 
-lspconfig.zls.setup({})
-
-lspconfig.gopls.setup({
-    cmd = {'gopls', '--remote=auto'},
-    settings = {
-        gopls = {
-            analyses = {
-                unusedparams = true,
-            },
-            staticcheck = true,
-        },
-    },
-})
-
 lspconfig.clangd.setup({})
 
 lspconfig.pylsp.setup({})
