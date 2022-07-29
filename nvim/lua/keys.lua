@@ -35,6 +35,7 @@ vim.api.nvim_set_keymap('', '<A-Down>', '<C-w><Down>', { noremap = true })
 vim.api.nvim_set_keymap('', '<leader>b', '"_', {})
 -- use backspace to delete to blackhole register
 vim.api.nvim_set_keymap('', '<BS>', '"_d', {})
+vim.api.nvim_set_keymap('', '<BS><BS>', '"_dd', {})
 -- disable middle mouse click pasting
 vim.api.nvim_set_keymap('', '<MiddleMouse>',  '<Nop>', {})
 vim.api.nvim_set_keymap('', '<2-MiddleMouse>',  '<Nop>', {})
