@@ -14,3 +14,5 @@ vim.api.nvim_set_option('cursorline', true)
 -- hide number column from terminal buffers
 -- FIXME: Remove vimscript (Blocked on: https://github.com/neovim/neovim/pull/12378).
 vim.api.nvim_command('autocmd TermOpen * setlocal nonumber norelativenumber')
+-- use terminal background
+vim.api.nvim_command('hi Normal ctermbg=none guibg=none')
