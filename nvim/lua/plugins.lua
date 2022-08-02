@@ -11,11 +11,14 @@ return require('packer').startup(function()
     use 'mengelbrecht/lightline-bufferline'
     use {
         'neovim/nvim-lspconfig',
-        config = function() require('plugins.nvim-lspconfig') end
+        config = function() require('plugins.nvim-lspconfig') end,
+        requires = {
+            'hrsh7th/cmp-nvim-lsp'
+        }
     }
     use {
-        'hrsh7th/nvim-compe',
-        config = function() require('plugins.nvim-compe') end
+        'hrsh7th/nvim-cmp',
+        config = function() require('plugins.nvim-cmp') end
     }
     use 'romainl/vim-qf'
     use {
@@ -57,7 +60,7 @@ return require('packer').startup(function()
     use {
         'hrsh7th/vim-vsnip',
         requires = {
-            'hrsh7th/vim-vsnip-integ',
+            'hrsh7th/cmp-vsnip',
         }
     }
     use {
