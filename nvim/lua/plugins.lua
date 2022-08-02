@@ -18,7 +18,10 @@ return require('packer').startup(function()
     }
     use {
         'hrsh7th/nvim-cmp',
-        config = function() require('plugins.nvim-cmp') end
+        config = function() require('plugins.nvim-cmp') end,
+        requires = {
+            'hrsh7th/cmp-buffer'
+        }
     }
     use 'romainl/vim-qf'
     use {
