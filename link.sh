@@ -19,14 +19,14 @@ function fish_config() {
     clean_and_symlink $(pwd)/fish ~/.config/fish
 }
 
-function alacritty_config() {
+function foot_config() {
     echo ""
-    echo Configuring alacritty...
-    # Create symlink for alacritty config.
-    clean_and_symlink $(pwd)/alacritty ~/.config/alacritty
-    # Symlink the local xterm binary to alacritty so gnome can open terminal
-    # applications using alacritty.
-    clean_and_symlink /usr/bin/alacritty ~/.local/bin/xterm
+    echo Configuring foot...
+    # Create symlink for foot config.
+    clean_and_symlink $(pwd)/foot ~/.config/foot
+    # Symlink the local xterm binary to foot so gnome can open terminal
+    # applications using foot.
+    clean_and_symlink /usr/bin/foot ~/.local/bin/xterm
 }
 
 function nvim_config() {
@@ -50,5 +50,4 @@ function gnome_config() {
 
 fish_config
 nvim_config
-gnome_config
-alacritty_config
+foot_config
