@@ -30,10 +30,7 @@ return require('packer').startup(function()
     }
     use 'jeffkreeftmeijer/vim-numbertoggle'
     use 'machakann/vim-sandwich'
-    use {
-        'cohama/lexima.vim',
-        config = function() require('plugins.lexima') end
-    }
+    use 'cohama/lexima.vim'
     use 'bronson/vim-trailing-whitespace'
     use {
         'preservim/nerdcommenter',
