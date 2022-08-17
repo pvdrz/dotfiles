@@ -80,3 +80,10 @@ vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>Telescope lsp_references<CR>', {
 vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
 -- show document diagnostics
 vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Telescope diagnostics bufnr=0<CR>', { noremap = true, silent = true })
+
+
+-- Gitsigns
+vim.api.nvim_set_keymap('n', '<leader>gn', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", { noremap = true, silent = true, expr = true })
+vim.api.nvim_set_keymap('n', '<leader>gp', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", { noremap = true, silent = true, expr = true })
+vim.api.nvim_set_keymap('n', '<leader>gb', '<cmd>lua require"gitsigns".blame_line{full=true}<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gu', ':Gitsigns reset_hunk<CR>', { noremap = true, silent = true })

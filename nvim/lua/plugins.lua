@@ -37,8 +37,8 @@ return require('packer').startup(function()
         config = function() require('plugins.nerdcommenter') end
     }
     use {
-        'airblade/vim-gitgutter',
-        config = function() require('plugins.gitgutter') end
+        'lewis6991/gitsigns.nvim',
+        config = function() require('plugins.gitsigns-nvim') end
     }
     use 'nelstrom/vim-visual-star-search'
     use {
