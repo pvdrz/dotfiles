@@ -83,7 +83,7 @@ vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Telescope diagnostics bufnr=0<CR
 
 
 -- Gitsigns
-vim.api.nvim_set_keymap('n', '<leader>gn', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", { noremap = true, silent = true, expr = true })
-vim.api.nvim_set_keymap('n', '<leader>gp', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", { noremap = true, silent = true, expr = true })
-vim.api.nvim_set_keymap('n', '<leader>gb', '<cmd>lua require"gitsigns".blame_line{full=true}<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>gu', ':Gitsigns reset_hunk<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>h', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", { noremap = true, silent = true, expr = true })
+vim.api.nvim_set_keymap('n', '<leader>H', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", { noremap = true, silent = true, expr = true })
+vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>lua require"gitsigns".blame_line{full=true}<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>u', ':Gitsigns reset_hunk<CR>', { noremap = true, silent = true })
