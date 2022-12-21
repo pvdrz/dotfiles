@@ -69,4 +69,5 @@ return require('packer').startup(function()
         config = function() require('plugins.vim-floaterm') end
     }
     use 'stevearc/dressing.nvim'
+    use 'wsdjeg/vim-fetch'
 end)
