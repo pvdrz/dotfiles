@@ -1,73 +1,86 @@
-vim.cmd 'packadd packer.nvim'
-vim.api.nvim_command('autocmd BufWritePost plugins.lua PackerCompile')
+local packer = require('packer')
 
-return require('packer').startup(function()
+return packer.startup(function(use) 
     use 'wbthomason/packer.nvim'
     use 'justinmk/vim-dirvish'
     use {
-        'itchyny/lightline.vim',
-        config = function() require('plugins.lightline') end
-    }
-    use 'mengelbrecht/lightline-bufferline'
-    use {
         'neovim/nvim-lspconfig',
-        config = function() require('plugins.nvim-lspconfig') end,
-        requires = {
-            'hrsh7th/cmp-nvim-lsp'
-        }
+        config = function() require('config.nvim-lspconfig') end,
+        after = 'nvim-cmp',
+    }
+    use {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.0',
+        requires = { 
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-ui-select.nvim',
+            },
+        config = function() require('config.telescope-nvim') end,
     }
     use {
         'hrsh7th/nvim-cmp',
-        config = function() require('plugins.nvim-cmp') end,
+        config = function() require('config.nvim-cmp') end,
         requires = {
-            'hrsh7th/cmp-buffer'
-        }
-    }
-    use 'romainl/vim-qf'
-    use {
-        'arcticicestudio/nord-vim',
-        branch = 'main'
-    }
-    use 'jeffkreeftmeijer/vim-numbertoggle'
-    use 'machakann/vim-sandwich'
-    use 'cohama/lexima.vim'
-    use 'bronson/vim-trailing-whitespace'
-    use {
-        'preservim/nerdcommenter',
-        config = function() require('plugins.nerdcommenter') end
-    }
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function() require('plugins.gitsigns-nvim') end
-    }
-    use 'nelstrom/vim-visual-star-search'
-    use {
-        'cespare/vim-toml',
-        branch = 'main'
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-vsnip',
+            'hrsh7th/vim-vsnip',
+            'windwp/nvim-autopairs',
+        },
     }
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
-        config = function() require('plugins.nvim-treesitter') end
+        config = function() require('config.nvim-treesitter') end,
     }
     use {
-        'nvim-telescope/telescope.nvim',
-        requires = {
-            'nvim-lua/popup.nvim',
-            'nvim-lua/plenary.nvim',
-        },
-        config = function() require('plugins.telescope') end
+        'navarasu/onedark.nvim',
+        config = function() require('config.onedark-nvim') end,
+    }
+    use 'machakann/vim-sandwich'
+    use {
+        'windwp/nvim-autopairs',
+        config = function() require('config.nvim-autopairs') end,	
     }
     use {
-        'hrsh7th/vim-vsnip',
+        'lewis6991/gitsigns.nvim',
+        config = function() require('config.gitsigns-nvim') end,
+    }
+    use {
+        'cespare/vim-toml',
+        branch = 'main',
+    }
+    use {
+        'preservim/nerdcommenter',
+        config = function() require('config.nerdcommenter') end,
+    }
+    use 'wsdjeg/vim-fetch'
+    use 'sitiom/nvim-numbertoggle'
+    use {
+        'nvim-lualine/lualine.nvim',
+        config = function() require('config.lualine-nvim') end,
+    }
+    use {
+        'mrded/nvim-lsp-notify',
+        config = function() require('config.nvim-lsp-notify') end,
         requires = {
-            'hrsh7th/cmp-vsnip',
+            'rcarriga/nvim-notify',
+        }
+    }
+    use { 
+        'rcarriga/nvim-dap-ui', 
+        config = function() require('config.nvim-dap') end,
+        requires = {
+            'mfussenegger/nvim-dap',
         }
     }
     use {
-        'voldikss/vim-floaterm',
-        config = function() require('plugins.vim-floaterm') end
+        'akinsho/toggleterm.nvim',
+        config = function() require('config.toggleterm-nvim') end,
     }
-    use 'stevearc/dressing.nvim'
-    use 'wsdjeg/vim-fetch'
+    use {
+        'romgrk/barbar.nvim',
+        config = function() require('config.barbar-nvim') end,
+    }
 end)

@@ -6,3 +6,5 @@ vim.api.nvim_set_var('NERDCommentEmptyLines', 1)
 vim.api.nvim_set_var('NERDDefaultAlign', 'left')
 -- do not load key mappings
 vim.api.nvim_set_var('NERDCreateDefaultMappings', 0)
+-- toggle comments
+vim.api.nvim_set_keymap('', '<F3>', '<Plug>NERDCommenterToggle', {})
