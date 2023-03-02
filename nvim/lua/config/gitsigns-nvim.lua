@@ -7,7 +7,7 @@ vim.keymap.set('n', '<leader>h', gitsigns.next_hunk, opts)
 -- go to previous hunk
 vim.keymap.set('n', '<leader>H', gitsigns.prev_hunk, opts)
 -- show blame for current line
-vim.keymap.set('n', '<leader>B', function() gitsigns.blame_line({ full = true }) end, opts)
+vim.keymap.set('n', '<leader>b', function() gitsigns.blame_line({ full = true }) end, opts)
 -- undo hunk
 vim.keymap.set('n', '<leader>u', gitsigns.reset_hunk, opts)
 
