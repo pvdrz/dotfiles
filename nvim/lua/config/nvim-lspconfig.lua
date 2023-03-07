@@ -92,7 +92,7 @@ function rust_on_init(client)
         client.config.settings['rust-analyzer'].cargo.buildScripts.enable = true
         client.config.settings['rust-analyzer'].cargo.buildScripts.invocationLocation = 'root'
         client.config.settings['rust-analyzer'].cargo.buildScripts.invocationStrategy = 'once'
-        client.config.settings['rust-analyzer'].cargo.buildScripts.overrideCommand = chec_cmd
+        client.config.settings['rust-analyzer'].cargo.buildScripts.overrideCommand = check_cmd
         client.config.settings['rust-analyzer'].cargo.sysrootSrc = './library'
         client.config.settings['rust-analyzer'].rustc.source = './Cargo.toml'
     else 
