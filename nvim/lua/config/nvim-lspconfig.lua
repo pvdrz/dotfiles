@@ -70,19 +70,41 @@ local rust_settings = {
     }
 } 
 
-lspconfig.rust_analyzer.setup({
-    on_init = function(client)
-        local notify = require('notify')
-        local path = client.workspace_folders[1].name
+function rust_on_init(client)
+    local notify = require('notify')
+    local path = client.workspace_folders[1].name
 
-        if string.find(path, 'rust%-bindgen') ~= nil then
-            notify('Using bindgen config', 'info', { title = 'LSP' })
-            client.config.settings['rust-analyzer'].cargo.features = { 'experimental' }
-        end
+    if string.find(path, 'rust%-bindgen') ~= nil then
+        notify('Using bindgen config', 'info', { title = 'LSP' })
+        client.config.settings['rust-analyzer'].cargo.features = { 'experimental' }
+    elseif string.find(path, 'Workspace/rust') ~= nil then
+        notify('Using rustc config', 'info', { title = 'LSP' })
+        local host = "x86_64-unknown-linux-gnu"
+        local check_cmd = { 'python3', 'x.py', 'check', '--json-output' }
 
-        client.notify('workspace/didChangeConfiguration', { settings = client.config.settings })
+        client.config.settings['rust-analyzer'].check.invocationLocation = 'root'
+        client.config.settings['rust-analyzer'].check.invocationStrategy = 'once'
+        client.config.settings['rust-analyzer'].check.overrideCommand = check_cmd 
+        client.config.settings['rust-analyzer'].linkedProjects = { 'src/bootstrap/Cargo.toml', 'Cargo.toml' }
+        client.config.settings['rust-analyzer'].rustfmt.overrideCommand = { './build' .. host .. '/rustfmt/bin/rustfmt'}
+        client.config.settings['rust-analyzer'].procMacro.server = './build' .. host .. '/stage0/libexec/rust-analyzer-proc-macro-srv'
+        client.config.settings['rust-analyzer'].procMacro.enable = true
+        client.config.settings['rust-analyzer'].cargo.buildScripts.enable = true
+        client.config.settings['rust-analyzer'].cargo.buildScripts.invocationLocation = 'root'
+        client.config.settings['rust-analyzer'].cargo.buildScripts.invocationStrategy = 'once'
+        client.config.settings['rust-analyzer'].cargo.buildScripts.overrideCommand = chec_cmd
+        client.config.settings['rust-analyzer'].cargo.sysrootSrc = './library'
+        client.config.settings['rust-analyzer'].rustc.source = './Cargo.toml'
+    else 
         return true
-    end, 
+    end
+
+    client.notify('workspace/didChangeConfiguration', { settings = client.config.settings })
+    return true
+end
+
+lspconfig.rust_analyzer.setup({
+    on_init = rust_on_init,
     capabilities = capabilities,
     settings = rust_settings,
 })
