@@ -57,12 +57,12 @@ local rust_settings = {
                 },
                 print = {
                     postfix = 'print',
-                    body = 'println!(\'{}\', ${receiver});',
+                    body = 'println!("{}", ${receiver});',
                     scope = 'expr',
                 },
                 debug = {
                     postfix = 'debug',
-                    body = 'println!(\'{:?}\', ${receiver});',
+                    body = 'println!("{:?}", ${receiver});',
                     scope = 'expr',
                 },
             }
@@ -86,3 +86,5 @@ lspconfig.rust_analyzer.setup({
     capabilities = capabilities,
     settings = rust_settings,
 })
+
+lspconfig.clangd.setup({})

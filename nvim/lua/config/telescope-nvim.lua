@@ -10,8 +10,6 @@ vim.keymap.set('n', '<leader>i', builtin.lsp_implementations, opts)
 vim.keymap.set('n', '<leader>r', builtin.lsp_references, opts)
 -- show workspace diagnostics
 vim.keymap.set('n', '<leader>w', builtin.diagnostics, opts)
--- list buffers
-vim.keymap.set('n', '<leader>b', function() builtin.buffers({ sort_mru = true }) end, opts)
 
 local config = {
     layout_strategy = 'vertical',
