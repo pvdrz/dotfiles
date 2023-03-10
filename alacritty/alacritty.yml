@@ -685,8 +685,19 @@ colors:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
-  #- { key: Paste,                                       action: Paste          }
+key_bindings:
+  - { key: V,         mods: Control|Shift, mode: ~Vi,        action: Paste            }
+  - { key: C,         mods: Control|Shift,                   action: Copy             }
+  - { key: F,         mods: Control|Shift, mode: ~Search,    action: SearchForward    }
+  - { key: B,         mods: Control|Shift, mode: ~Search,    action: SearchBackward   }
+  - { key: PageUp,    mods: Shift,         mode: ~Alt,       action: ScrollPageUp     }
+  - { key: PageDown,  mods: Shift,         mode: ~Alt,       action: ScrollPageDown   }
+  - { key: Home,      mods: Shift,         mode: ~Alt,       action: ScrollToTop      }
+  - { key: End,       mods: Shift,         mode: ~Alt,       action: ScrollToBottom   }
+  - { key: Plus,      mods: Control,                         action: IncreaseFontSize }
+  - { key: Minus,     mods: Control,                         action: DecreaseFontSize }
+  - { key: N,         mods: Control|Shift,                   action: CreateNewWindow  }
+    #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
   #- { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"          }
