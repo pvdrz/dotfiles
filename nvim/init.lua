@@ -22,11 +22,11 @@ function cfg(name)
 end
 
 require('lazy').setup({
-  'justinmk/vim-dirvish',
   {
     'shaunsingh/nord.nvim',
     config = cfg('nord-nvim'),
   },
+  'justinmk/vim-dirvish',
   {
     'neovim/nvim-lspconfig',
     config = cfg('nvim-lspconfig'),
@@ -78,6 +78,9 @@ require('lazy').setup({
   'sitiom/nvim-numbertoggle',
   {
     'nvim-lualine/lualine.nvim',
+    dependencies = {
+      'shaunsingh/nord.nvim',
+    },
     config = cfg('lualine-nvim'),
   },
   {
@@ -100,6 +103,9 @@ require('lazy').setup({
   },
   {
     'akinsho/bufferline.nvim',
+    dependencies = {
+      'shaunsingh/nord.nvim',
+    },
     config = cfg('bufferline-nvim'),
   }
 })
