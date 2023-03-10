@@ -1,40 +1,105 @@
 require('keys')
-require('plugins')
+require('misc')
 
--- set termguicolors
-vim.api.nvim_set_option('termguicolors', true)
--- show line numbers 
-vim.api.nvim_win_set_option(0, 'number', true)
-
--- hide buffers instead of closing them
-vim.api.nvim_set_option('hidden', true)
--- no backup files
-vim.api.nvim_set_option('backup', false)
--- no swap files
-vim.api.nvim_set_option('swapfile', false)
--- close preview/scratch window
-vim.o.completeopt = 'menuone,noselect'
--- enable mouse
-vim.api.nvim_set_option('mouse', 'a')
--- enable system clipboard
-vim.api.nvim_set_option('clipboard', 'unnamedplus')
-
-local tabsize = 4
-
-function nvim_set_glob_option(option, value)
-    vim.api.nvim_set_option(option, value)
-    vim.api.nvim_buf_set_option(0, option, value)
+-- clone lazy.nvim if we don't have it already
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
+    lazypath,
+  })
 end
--- set number of spaces per tab
-nvim_set_glob_option('tabstop', tabsize)
--- set number of spaces per tab when editing
-nvim_set_glob_option('softtabstop', tabsize)
--- set number of spaces for autoindent
-nvim_set_glob_option('shiftwidth', tabsize)
--- expand dabs with spaces
-nvim_set_glob_option('expandtab', true)
--- adjust to the next indentation level
-vim.api.nvim_set_option('smarttab', true)
+vim.opt.rtp:prepend(lazypath)
 
--- disable netrw
-vim.api.nvim_set_var('loaded_netrwPlugin', 1)
+function cfg(name)
+  return function()
+    require('config.' .. name)
+  end
+end
+
+require('lazy').setup({
+  'justinmk/vim-dirvish',
+  {
+    'shaunsingh/nord.nvim',
+    config = cfg('nord-nvim'),
+  },
+  {
+    'neovim/nvim-lspconfig',
+    config = cfg('nvim-lspconfig'),
+  },
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.0',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-ui-select.nvim',
+    },
+    config = cfg('telescope-nvim'),
+  },
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/vim-vsnip',
+      'windwp/nvim-autopairs',
+    },
+    config = cfg('nvim-cmp'),
+  },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = 'TSUpdate',
+    config = cfg('nvim-treesitter'),
+  },
+  'machakann/vim-sandwich',
+  {
+    'windwp/nvim-autopairs',
+    config = cfg('nvim-autopairs'),
+  },
+  {
+    'lewis6991/gitsigns.nvim',
+    config = cfg('gitsigns-nvim'),
+  },
+  {
+    'cespare/vim-toml',
+    branch = 'main',
+  },
+  {
+    'preservim/nerdcommenter',
+    config = cfg('nerdcommenter'),
+  },
+  'wsdjeg/vim-fetch',
+  'sitiom/nvim-numbertoggle',
+  {
+    'nvim-lualine/lualine.nvim',
+    config = cfg('lualine-nvim'),
+  },
+  {
+    'mrded/nvim-lsp-notify',
+    dependencies = {
+      'rcarriga/nvim-notify',
+    },
+    config = cfg('nvim-lsp-notify'),
+  },
+  {
+    'rcarriga/nvim-dap-ui',
+    dependencies = {
+      'mfussenegger/nvim-dap',
+    },
+    config = cfg('nvim-dap'),
+  },
+  {
+    'akinsho/toggleterm.nvim',
+    config = cfg('toggleterm-nvim'),
+  },
+  {
+    'akinsho/bufferline.nvim',
+    config = cfg('bufferline-nvim'),
+  }
+})

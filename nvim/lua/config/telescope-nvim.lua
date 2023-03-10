@@ -12,14 +12,14 @@ vim.keymap.set('n', '<leader>r', builtin.lsp_references, opts)
 vim.keymap.set('n', '<leader>w', builtin.diagnostics, opts)
 
 local config = {
-    layout_strategy = 'vertical',
-    layout_config = { scroll_speed = 1 },
+  layout_strategy = 'vertical',
+  layout_config = { scroll_speed = 1 },
 }
 
 local preview = {
-    jump_type = 'never',
-    layout_strategy = 'vertical',
-    layout_config = { scroll_speed = 1, width = 100, preview_height = 0.8 },
+  jump_type = 'never',
+  layout_strategy = 'vertical',
+  layout_config = { scroll_speed = 1, width = 100, preview_height = 0.8 },
 }
 
 require('telescope').setup({

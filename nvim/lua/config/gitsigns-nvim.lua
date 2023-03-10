@@ -12,8 +12,8 @@ vim.keymap.set('n', '<leader>b', function() gitsigns.blame_line({ full = true })
 vim.keymap.set('n', '<leader>u', gitsigns.reset_hunk, opts)
 
 gitsigns.setup({
-    -- don't show signs for diffs
-    signcolumn = false,
-    -- use line number higlighting for diffs
-    numhl = true,
+  -- don't show signs for diffs
+  signcolumn = false,
+  -- use line number higlighting for diffs
+  numhl = true,
 })
