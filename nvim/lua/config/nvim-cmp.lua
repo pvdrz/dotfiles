@@ -7,13 +7,13 @@ cmp.event:on(
   cmp_autopairs.on_confirm_done({
     filetypes = {
       -- "*" is a alias to all filetypes
-      ["*"] = {
-        ["("] = {
+      ['*'] = {
+        ['('] = {
           kind = {
             cmp.lsp.CompletionItemKind.Function,
             cmp.lsp.CompletionItemKind.Method,
           },
-          handler = handlers["*"]
+          handler = handlers['*']
         }
       },
     }
