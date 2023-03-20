@@ -1,5 +1,6 @@
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local settings = require("nlspsettings")
 
 -- key bindings
 local opts = { noremap = true, silent = true }
@@ -23,96 +24,24 @@ vim.diagnostic.config({
   underline = false,
 })
 
-local rust_settings = {
-  ['rust-analyzer'] = {
-    rustcSource = 'discover',
-    cargo = { features = 'all' },
-    completion = {
-      snippets = {
-        some = {
-          postfix = 'some',
-          body = 'Some(${receiver})',
-          scope = 'expr',
-        },
-        ok = {
-          postfix = 'ok',
-          body = 'Ok(${receiver})',
-          scope = 'expr',
-        },
-        err = {
-          postfix = 'err',
-          body = 'Err(${receiver})',
-          scope = 'expr',
-        },
-        unsafe = {
-          postfix = 'unsafe',
-          body = 'unsafe { ${receiver} }',
-          scope = 'expr',
-        },
-        arc = {
-          postfix = 'arc',
-          body = 'Arc::new(${receiver})',
-          scope = 'expr',
-          requires = 'std::sync::Arc',
-        },
-        print = {
-          postfix = 'print',
-          body = 'println!("{}", ${receiver});',
-          scope = 'expr',
-        },
-        debug = {
-          postfix = 'debug',
-          body = 'println!("{:?}", ${receiver});',
-          scope = 'expr',
-        },
-      }
-    }
-  }
-}
-
-local function rust_on_init(client)
-  local notify = require('notify')
-  local path = client.workspace_folders[1].name
-
-  if string.find(path, 'rust%-bindgen') ~= nil then
-    notify('Using bindgen config', 'info', { title = 'LSP' })
-    client.config.settings['rust-analyzer'].cargo.features = { 'experimental' }
-  elseif string.find(path, 'Workspace/rust') ~= nil then
-    notify('Using rustc config', 'info', { title = 'LSP' })
-    local host = "x86_64-unknown-linux-gnu"
-    local check_cmd = { 'python3', 'x.py', 'check', '--json-output' }
-
-    client.config.settings['rust-analyzer'].check.invocationLocation = 'root'
-    client.config.settings['rust-analyzer'].check.invocationStrategy = 'once'
-    client.config.settings['rust-analyzer'].check.overrideCommand = check_cmd
-    client.config.settings['rust-analyzer'].linkedProjects = { 'src/bootstrap/Cargo.toml', 'Cargo.toml' }
-    client.config.settings['rust-analyzer'].rustfmt.overrideCommand = { './build' .. host .. '/rustfmt/bin/rustfmt' }
-    client.config.settings['rust-analyzer'].procMacro.server = './build' ..
-        host .. '/stage0/libexec/rust-analyzer-proc-macro-srv'
-    client.config.settings['rust-analyzer'].procMacro.enable = true
-    client.config.settings['rust-analyzer'].cargo.buildScripts.enable = true
-    client.config.settings['rust-analyzer'].cargo.buildScripts.invocationLocation = 'root'
-    client.config.settings['rust-analyzer'].cargo.buildScripts.invocationStrategy = 'once'
-    client.config.settings['rust-analyzer'].cargo.buildScripts.overrideCommand = check_cmd
-    client.config.settings['rust-analyzer'].cargo.sysrootSrc = './library'
-    client.config.settings['rust-analyzer'].rustc.source = './Cargo.toml'
-  else
-    return true
-  end
-
-  client.notify('workspace/didChangeConfiguration', { settings = client.config.settings })
-  return true
-end
-
-lspconfig.rust_analyzer.setup({
-  on_init = rust_on_init,
-  capabilities = capabilities,
-  settings = rust_settings,
+settings.setup({
+  config_home = vim.fn.stdpath('config') .. '/nlsp-settings',
+  local_settings_dir = ".nlsp-settings",
+  local_settings_root_markers_fallback = { '.git' },
+  append_default_schemas = true,
+  loader = 'json'
 })
 
-lspconfig.clangd.setup({})
+lspconfig.rust_analyzer.setup({
+  capabilities = capabilities,
+})
+
+lspconfig.clangd.setup({
+  capabilities = capabilities,
+})
 
 lspconfig.lua_ls.setup({
+  capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {

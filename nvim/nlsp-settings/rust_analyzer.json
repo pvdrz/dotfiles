@@ -1,0 +1,37 @@
+{
+    "rust-analyzer.rustc.source": "discover",
+    "rust-analyzer.cargo.features": "all",
+    "rust-analyzer.completion.snippets.custom": {
+        "some": {
+          "postfix": "some",
+          "body": "Some(${receiver})",
+          "scope": "expr"
+        },
+        "ok": {
+          "postfix": "ok",
+          "body": "Ok(${receiver})",
+          "scope": "expr"
+        },
+        "err": {
+          "postfix": "err",
+          "body": "Err(${receiver})",
+          "scope": "expr"
+        },
+        "arc": {
+          "postfix": "arc",
+          "body": "Arc::new(${receiver})",
+          "scope": "expr",
+          "requires": "std::sync::Arc"
+        },
+        "print": {
+          "postfix": "print",
+          "body": "println!(\"{}\", ${receiver});",
+          "scope": "expr"
+        },
+        "debug": {
+          "postfix": "debug",
+          "body": "println!(\"{:?}\", ${receiver});",
+          "scope": "expr"
+        }
+    }
+}

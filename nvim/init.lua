@@ -30,6 +30,9 @@ require('lazy').setup({
   {
     'neovim/nvim-lspconfig',
     config = cfg('nvim-lspconfig'),
+    dependencies = {
+      'tamago324/nlsp-settings.nvim',
+    }
   },
   {
     'nvim-telescope/telescope.nvim',
