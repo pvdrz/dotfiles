@@ -101,8 +101,8 @@ require('lazy').setup({
     config = cfg('nvim-dap'),
   },
   {
-    'akinsho/toggleterm.nvim',
-    config = cfg('toggleterm-nvim'),
+    'voldikss/vim-floaterm',
+    config = cfg('vim-floaterm'),
   },
   {
     'akinsho/bufferline.nvim',

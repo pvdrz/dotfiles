@@ -1,22 +1,9 @@
 local dap = require('dap')
 local dap_ui = require('dapui')
 
-vim.g.dap_is_open = false
-vim.g.term_closed_dap = false
-
 vim.keymap.set('n', '\\b', dap.toggle_breakpoint)
 vim.keymap.set('n', '\\c', function() dap.continue() end)
-vim.keymap.set('n', '\\o', function()
-  if vim.g.dap_is_open then
-    vim.g.dap_is_open = false
-    dap_ui.close()
-  else
-    if not vim.g.term_closed_dap then
-      vim.g.dap_is_open = true
-      dap_ui.open()
-    end
-  end
-end)
+vim.keymap.set('n', '\\o', function() dap_ui.toggle() end)
 
 dap.adapters.codelldb = {
   type = 'server',
