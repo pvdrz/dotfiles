@@ -21,6 +21,10 @@ cmp.event:on(
 )
 
 cmp.setup({
+  enabled = function()
+    return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
+        or require("cmp_dap").is_dap_buffer()
+  end,
   snippet = {
     expand = function(args) vim.fn['vsnip#anonymous'](args.body) end,
   },
@@ -37,4 +41,10 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = false }),
   }),
+})
+
+cmp.setup.filetype({ "dap-repl" }, {
+  sources = {
+    { name = "dap" },
+  },
 })

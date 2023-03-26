@@ -1,4 +1,7 @@
+local telescope = require('telescope')
 local builtin = require('telescope.builtin')
+
+telescope.load_extension('ui-select')
 
 -- key bindings
 local opts = { noremap = true, silent = true }
@@ -22,7 +25,7 @@ local preview = {
   layout_config = { scroll_speed = 1, width = 100, preview_height = 0.8 },
 }
 
-require('telescope').setup({
+telescope.setup({
   pickers = {
     -- Default configuration for builtin pickers goes here:
     lsp_type_definitions = preview,
@@ -39,4 +42,3 @@ require('telescope').setup({
   }
 })
 
-require('telescope').load_extension('ui-select')

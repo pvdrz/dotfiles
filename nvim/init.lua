@@ -40,6 +40,7 @@ require('lazy').setup({
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-ui-select.nvim',
+      'nvim-telescope/telescope-dap.nvim',
     },
     config = cfg('telescope-nvim'),
   },
@@ -52,6 +53,7 @@ require('lazy').setup({
       'hrsh7th/cmp-vsnip',
       'hrsh7th/vim-vsnip',
       'windwp/nvim-autopairs',
+      'rcarriga/cmp-dap',
     },
     config = cfg('nvim-cmp'),
   },
@@ -94,9 +96,9 @@ require('lazy').setup({
     config = cfg('nvim-lsp-notify'),
   },
   {
-    'rcarriga/nvim-dap-ui',
+    'mfussenegger/nvim-dap',
     dependencies = {
-      'mfussenegger/nvim-dap',
+      'nvim-telescope/telescope.nvim',
     },
     config = cfg('nvim-dap'),
   },
