@@ -4,7 +4,9 @@ vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
 vim.keymap.set('', '<F2>', ':FloatermToggle<CR>', { noremap = true })
 vim.keymap.set('t', '<F2>', '<C-\\><C-n>:FloatermToggle<CR>', { noremap = true })
 -- use a vertical split
-vim.g.floaterm_wintype = 'vsplit'
+vim.g.floaterm_wintype = 'split'
+-- set the terminal height
+vim.g.floaterm_height = 0.3
 
 vim.api.nvim_create_autocmd('TermOpen', {
   pattern = '*',

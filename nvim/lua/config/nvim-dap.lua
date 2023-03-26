@@ -18,6 +18,7 @@ vim.keymap.set('n', '\\f', telescope.extensions.dap.frames, opts)
 vim.keymap.set('n', '\\l', telescope.extensions.dap.list_breakpoints, opts)
 -- toggle REPL
 vim.keymap.set('', '<F4>', function() dap.repl.toggle({height = 10}) end, opts)
+vim.keymap.set('t', '<F4>', '<C-\\><C-n>:lua require("dap").repl.toggle({height = 10})<CR>', { noremap = true })
 
 dap.adapters.codelldb = {
   type = 'server',
