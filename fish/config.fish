@@ -12,6 +12,8 @@ set -gx SCCACHE_CACHE_SIZE "30G"
 set -gx GOPATH $HOME/Workspace/go
 set -gx PATH $GOPATH/bin $PATH
 
+set -gx DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
+
 # sudoedit is too long
 alias svim sudoedit
 
