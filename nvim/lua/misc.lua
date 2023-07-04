@@ -29,15 +29,19 @@ set_tabsize(4, function(option, value)
   vim.api.nvim_buf_set_option(0, option, value)
 end)
 
--- set tabsize for lua
-vim.api.nvim_create_autocmd('BufEnter', {
-  pattern = '*.lua',
-  callback = function()
-    set_tabsize(2, function(option, value)
-      vim.api.nvim_buf_set_option(0, option, value)
-    end)
-  end
-})
+-- set tabsize to 2 for some languages
+local extensions = { 'lua', 'ex', 'exs', 'c', 'h' }
+
+for _, extension in ipairs(extensions) do
+  vim.api.nvim_create_autocmd('BufEnter', {
+    pattern = '*.' .. extension,
+    callback = function()
+      set_tabsize(2, function(option, value)
+        vim.api.nvim_buf_set_option(0, option, value)
+      end)
+    end
+  })
+end
 
 -- expand tabs with spaces
 vim.api.nvim_set_option('expandtab', true)
