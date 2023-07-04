@@ -47,6 +47,11 @@ lspconfig.pylsp.setup({
   capabilities = capabilities,
 })
 
+lspconfig.elixirls.setup({
+  cmd = { "/usr/bin/elixir-ls" },
+  capabilities = capabilities,
+})
+
 lspconfig.lua_ls.setup({
   capabilities = capabilities,
   settings = {
