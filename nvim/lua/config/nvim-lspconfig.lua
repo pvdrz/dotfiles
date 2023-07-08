@@ -2,9 +2,6 @@ local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local settings = require("nlspsettings")
 
--- ignore logs for now
-vim.lsp.set_log_level("off")
-
 -- key bindings
 local opts = { noremap = true, silent = true }
 -- go to declaration
