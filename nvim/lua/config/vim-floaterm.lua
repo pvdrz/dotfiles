@@ -9,6 +9,8 @@ vim.g.floaterm_wintype = 'split'
 vim.g.floaterm_height = 0.3
 -- open files in a new tab
 vim.g.floaterm_opener = 'tabe'
+-- don't enter terminal mode after opening a temrina;
+vim.g.floaterm_autoinsert = false
 
 local function run_in_terminal(cmd)
   local n = #vim.fn["floaterm#buflist#gather"]()
