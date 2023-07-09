@@ -21,7 +21,7 @@ vim.diagnostic.config({
   -- don't use signs for diagnostics
   signs = false,
   -- don't use underlines for diagnostics
-  underline = false,
+  underline = true,
 })
 
 settings.setup({
