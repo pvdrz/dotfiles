@@ -13,6 +13,5 @@ vim.keymap.set('n', '<A-Down>', '<C-w><Down>', {})
 -- Don't paste with the middle mouse button
 for _, prefix in ipairs({"", "2-", "3-", "4-"}) do
   local lhs = "<" .. prefix .. "MiddleMouse>"
-  vim.keymap.set('n', lhs, "<Nop>", {})
-  vim.keymap.set('i', lhs, "<Nop>", {})
+  vim.keymap.set('', lhs, "<Nop>", {})
 end
