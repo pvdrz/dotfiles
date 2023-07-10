@@ -22,8 +22,8 @@ cmp.event:on(
 
 cmp.setup({
   enabled = function()
-    return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
-        or require("cmp_dap").is_dap_buffer()
+    return vim.bo.buftype ~= 'prompt'
+        or require('cmp_dap').is_dap_buffer()
   end,
   snippet = {
     expand = function(args) vim.fn['vsnip#anonymous'](args.body) end,

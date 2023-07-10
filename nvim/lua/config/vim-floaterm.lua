@@ -16,7 +16,7 @@ vim.g.floaterm_autoinsert = false
 vim.api.nvim_create_autocmd('TermOpen', {
   pattern = '*',
   callback = function()
-    vim.api.nvim_win_set_option(0, 'number', false)
-    vim.api.nvim_win_set_option(0, 'relativenumber', false)
+    vim.wo.number = false
+    vim.wo.relativenumber = false
   end
 })

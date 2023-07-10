@@ -1,10 +1,10 @@
 -- add heading space when commenting
-vim.api.nvim_set_var('NERDSpaceDelims', 1)
+vim.o.NERDSpaceDelims = 1
 -- allow commenting empty lines
-vim.api.nvim_set_var('NERDCommentEmptyLines', 1)
+vim.o.NERDCommentEmptyLines = 1
 -- comment in blocks
-vim.api.nvim_set_var('NERDDefaultAlign', 'left')
+vim.o.NERDDefaultAlign = 'left'
 -- do not load key mappings
-vim.api.nvim_set_var('NERDCreateDefaultMappings', 0)
+vim.o.NERDCreateDefaultMappings = 0
 -- toggle comments
-vim.api.nvim_set_keymap('', '<F3>', '<Plug>NERDCommenterToggle', {})
+vim.keymap.set('', '<F3>', '<Plug>NERDCommenterToggle', {})
