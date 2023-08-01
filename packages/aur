@@ -1,4 +1,3 @@
-codelldb-bin
 docker-rootless-extras
 elixir-ls-git
 gnome-shell-extension-pop-shell-git
@@ -7,6 +6,4 @@ nautilus-megasync
 paru
 signal-desktop-beta-bin
 spotify
-ttf-humor-sans
-xpadneo-dkms-git
 zoom
