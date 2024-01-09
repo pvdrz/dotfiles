@@ -112,5 +112,6 @@ require('lazy').setup({
       'shaunsingh/nord.nvim',
     },
     config = cfg('bufferline-nvim'),
-  }
+  },
+  'kaarmu/typst.vim'
 })
