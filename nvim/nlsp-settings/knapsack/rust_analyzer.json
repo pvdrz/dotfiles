@@ -1,7 +1,6 @@
 {
     "rust-analyzer.rustc.source": "discover",
     "rust-analyzer.cargo.features": "all",
-    "rust-analyzer.check.overrideCommand": ["cargo", "clippy", "--all-targets","--message-format=json"],
     "rust-analyzer.completion.snippets.custom": {
         "some": {
           "postfix": "some",
