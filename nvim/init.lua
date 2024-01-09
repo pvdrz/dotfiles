@@ -23,8 +23,9 @@ end
 
 require('lazy').setup({
   {
-    'shaunsingh/nord.nvim',
-    config = cfg('nord-nvim'),
+    "catppuccin/nvim",
+    config = cfg('catppuccin'),
+    name = "catppuccin"
   },
   'justinmk/vim-dirvish',
   {

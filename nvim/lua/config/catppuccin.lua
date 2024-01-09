@@ -1,9 +1,9 @@
-vim.g.nord_contrast = true
-vim.g.nord_borders = true
-vim.g.nord_italic = false
+require("catppuccin").setup({
+  flavour = "mocha"
+})
 
 -- Load the colorscheme
-require('nord').set()
+vim.cmd.colorscheme "catppuccin"
 
 -- Set visual highlight as the underline for diagnostics
 local diagnostic_highlight = 'Visual'

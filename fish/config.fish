@@ -59,44 +59,29 @@ function corgi
     end
 end
 
-set nord0 2e3440
-set nord1 3b4252
-set nord2 434c5e
-set nord3 4c566a
-set nord4 d8dee9
-set nord5 e5e9f0
-set nord6 eceff4
-set nord7 8fbcbb
-set nord8 88c0d0
-set nord9 81a1c1
-set nord10 5e81ac
-set nord11 bf616a
-set nord12 d08770
-set nord13 ebcb8b
-set nord14 a3be8c
-set nord15 b48ead
-
-set fish_color_normal $nord4
-set fish_color_command $nord9
-set fish_color_quote $nord14
-set fish_color_redirection $nord9
-set fish_color_end $nord6
-set fish_color_error $nord11
-set fish_color_param $nord4
-set fish_color_comment $nord3
-set fish_color_match $nord8
-set fish_color_search_match $nord8
-set fish_color_operator $nord9
-set fish_color_escape $nord13
-set fish_color_cwd $nord8
-set fish_color_autosuggestion $nord6
-set fish_color_user $nord4
-set fish_color_host $nord9
-set fish_color_cancel $nord15
-set fish_pager_color_prefix $nord13
-set fish_pager_color_completion $nord6
-set fish_pager_color_description $nord10
-set fish_pager_color_progress $nord12
-set fish_pager_color_secondary $nord1
-
-test -r "~/.dir_colors" && eval (dircolors -c ~/.dircolors)
+ set fish_color_normal cdd6f4
+ set fish_color_command 89b4fa
+ set fish_color_param f2cdcd
+ set fish_color_keyword f38ba8
+ set fish_color_quote a6e3a1
+ set fish_color_redirection f5c2e7
+ set fish_color_end fab387
+ set fish_color_comment 7f849c
+ set fish_color_error f38ba8
+ set fish_color_gray 6c7086
+ set fish_color_selection --background=313244
+ set fish_color_search_match --background=313244
+ set fish_color_option a6e3a1
+ set fish_color_operator f5c2e7
+ set fish_color_escape eba0ac
+ set fish_color_autosuggestion 6c7086
+ set fish_color_cancel f38ba8
+ set fish_color_cwd f9e2af
+ set fish_color_user 94e2d5
+ set fish_color_host 89b4fa
+ set fish_color_host_remote a6e3a1
+ set fish_color_status f38ba8
+ set fish_pager_color_progress 6c7086
+ set fish_pager_color_prefix f5c2e7
+ set fish_pager_color_completion cdd6f4
+ set fish_pager_color_description 6c7086
