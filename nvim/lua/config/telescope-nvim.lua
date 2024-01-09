@@ -13,6 +13,8 @@ vim.keymap.set('n', '<leader>i', builtin.lsp_implementations, opts)
 vim.keymap.set('n', '<leader>r', builtin.lsp_references, opts)
 -- show workspace diagnostics
 vim.keymap.set('n', '<leader>w', builtin.diagnostics, opts)
+-- do grep over the workspace 
+vim.keymap.set('n', '<leader>g', builtin.live_grep, opts)
 
 local config = {
   layout_strategy = 'vertical',
