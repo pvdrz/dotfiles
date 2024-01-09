@@ -10,6 +10,8 @@ vim.keymap.set('n', '<leader>H', gitsigns.prev_hunk, opts)
 vim.keymap.set('n', '<leader>b', function() gitsigns.blame_line({ full = true }) end, opts)
 -- undo hunk
 vim.keymap.set('n', '<leader>u', gitsigns.reset_hunk, opts)
+-- stage hunk
+vim.keymap.set('n', '<leader>s', gitsigns.stage_hunk, opts)
 
 gitsigns.setup({
   -- don't show signs for diffs
