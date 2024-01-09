@@ -90,6 +90,9 @@ require('lazy').setup({
   },
   {
     'mrded/nvim-lsp-notify',
+    dependencies = {
+      'rcarriga/nvim-notify'
+    },
     config = cfg('nvim-lsp-notify'),
   },
   {
