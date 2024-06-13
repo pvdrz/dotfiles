@@ -67,7 +67,6 @@ mutter
 nautilus
 neovim
 networkmanager
-nix
 openssh
 pavucontrol
 pipewire
@@ -79,6 +78,7 @@ qpwgraph
 ripgrep
 rsync
 rustup
+signal-desktop
 sd
 steam
 strace
