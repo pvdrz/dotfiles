@@ -10,12 +10,6 @@ set -gx PATH $HOME/.cargo/bin $PATH
 set -gx PATH /usr/lib/rustup/bin/ $PATH
 set -gx SCCACHE_CACHE_SIZE "30G"
 
-set -gx GOPATH $HOME/Workspace/go
-set -gx PATH $GOPATH/bin $PATH
-set -gx PATH $HOME/.nix-profile/bin $PATH
-
-set -gx DOCKER_HOST unix://$XDG_RUNTIME_DIR/docker.sock
-
 # sudoedit is too long
 alias svim sudoedit
 
@@ -26,38 +20,6 @@ end
 
 # Remove greeting
 set -gx fish_greeting ""
-
-# Check if crates are perfect
-function corgi
-    function print_and_run
-        echo Running "`$argv`"...
-        eval $argv
-    end
-
-    set cmds "cargo +nightly fmt --all"
-    set cmds $cmds "cargo check --release --all-targets --all-features"
-    set cmds $cmds "cargo clippy --all-targets --all-features"
-    set cmds $cmds "cargo test --release --all-features"
-    set cmds $cmds "cargo doc --all-features"
-
-    set args
-    if test -n "$argv"
-        for arg in $argv
-            set args $args " -p $arg"
-        end
-    else
-        set args $args ""
-    end
-
-    for cmd in $cmds
-        for arg in $args
-            print_and_run "$cmd$arg"
-            if test $status -ne 0
-                return -1
-            end
-        end
-    end
-end
 
  set fish_color_normal cdd6f4
  set fish_color_command 89b4fa
