@@ -134,6 +134,7 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk);
       vim.keymap.set("n", "<leader>hu", gitsigns.undo_stage_hunk);
       vim.keymap.set("n", "<leader>hb", function() gitsigns.blame_line({ full = true }) end);
+      vim.keymap.set("n", "<leader>hn", gitsigns.next_hunk);
 
       gitsigns.setup({})
     end
