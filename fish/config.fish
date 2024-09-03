@@ -47,3 +47,12 @@ set -gx fish_greeting ""
  set fish_pager_color_prefix f5c2e7
  set fish_pager_color_completion cdd6f4
  set fish_pager_color_description 6c7086
+
+function git
+    if test "$argv[1]" = "checkout"
+        echo "Don't use checkout; use switch or restore." >&2
+        return 1
+    else
+        command git $argv
+    end
+end
