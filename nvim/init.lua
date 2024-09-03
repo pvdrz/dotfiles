@@ -155,7 +155,28 @@ require("lazy").setup({
   
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+      lspconfig.rust_analyzer.setup({
+        on_init = function(client)
+          local path = client.workspace_folders[1].name
+
+          if string.find(path, "dnssec") then
+            client.config.settings["rust-analyzer"].cargo.features = { "dnssec-ring" }
+          elseif string.find(path, "bindgen") then
+            client.config.settings["rust-analyzer"].rustfmt.extraArgs = { "+nightly" }
+          end
+        end,
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              features = {}
+            },
+            rustfmt = {
+              extraArgs = {}
+            }
+          }
+        },
+        { capabilities = capabilities }
+      })
       lspconfig.typst_lsp.setup({ capabilities = capabilities })
       lspconfig.pylsp.setup({ capabilities = capabilities })
       local configs = require("lspconfig.configs")
