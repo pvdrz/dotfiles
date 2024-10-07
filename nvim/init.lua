@@ -160,7 +160,7 @@ require("lazy").setup({
           local path = client.workspace_folders[1].name
 
           if string.find(path, "dnssec") then
-            client.config.settings["rust-analyzer"].cargo.features = { "dnssec-ring" }
+            client.config.settings["rust-analyzer"].cargo.features = { "dnssec-ring", "hickory-recursor" }
           elseif string.find(path, "bindgen") then
             client.config.settings["rust-analyzer"].rustfmt.extraArgs = { "+nightly" }
           end
