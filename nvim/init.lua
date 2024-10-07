@@ -215,6 +215,7 @@ require("lazy").setup({
       vim.keymap.set("n", "<space>b", function() builtin.buffers({ sort_mru = true }) end)
       vim.keymap.set("n", "<space>D", builtin.diagnostics)
       vim.keymap.set("n", "<space>d", function() builtin.diagnostics({ bufnr = 0 }) end )
+      vim.keymap.set("n", "<space>l", builtin.live_grep)
 
       vim.keymap.set("n", "gd", builtin.lsp_definitions)
       vim.keymap.set("n", "gt", builtin.lsp_type_definitions)
