@@ -93,6 +93,7 @@ require("lazy").setup({
     "stevearc/dressing.nvim",
     opts = {},
   },
+  "wsdjeg/vim-fetch",
   {
     "echasnovski/mini.surround",
     version = "*",
