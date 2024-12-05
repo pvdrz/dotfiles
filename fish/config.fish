@@ -8,6 +8,8 @@ set -gx PATH $HOME/.local/bin $PATH
 # for cargo binaries
 set -gx PATH $HOME/.cargo/bin $PATH
 set -gx PATH /usr/lib/rustup/bin/ $PATH
+
+# for sccache
 set -gx SCCACHE_CACHE_SIZE "30G"
 
 # sudoedit is too long
