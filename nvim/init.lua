@@ -110,11 +110,19 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
+      local ts_utils = require("nvim-treesitter.ts_utils")
+        
+      vim.keymap.set("n", "<leader>tn", function() ts_utils.goto_node(ts_utils.get_next_node(ts_utils.get_node_at_cursor(), false, false)) end)
+      vim.keymap.set("n", "<leader>tp", function() ts_utils.goto_node(ts_utils.get_previous_node(ts_utils.get_node_at_cursor(), false, false)) end)
+
       require("nvim-treesitter.configs").setup({
         ensure_installed = { "rust", "lua", "c", "typst", "python" }, 
         highlight = {
           enable = true,
         },
+        incremental_selection = {
+          enable = true,
+        }
       })
     end
   },
@@ -161,24 +169,58 @@ require("lazy").setup({
           local path = client.workspace_folders[1].name
 
           if string.find(path, "dnssec") then
-            client.config.settings["rust-analyzer"].cargo.features = { "dnssec-ring", "hickory-recursor" }
+            client.config.settings["rust-analyzer"].cargo.features = { "dnssec", "dnssec-ring", "recursor", "sqlite", "resolver", "blocklist" }
           elseif string.find(path, "bindgen") then
             client.config.settings["rust-analyzer"].rustfmt.extraArgs = { "+nightly" }
+          elseif string.find(path, "ferrocene/ferrocene") then
+            local start_index, end_index = string.find(path, "ferrocene/ferrocene")
+            local workspace_path = string.sub(path, 1, end_index)
+            client.config.settings["rust-analyzer"].check.invocationStrategy = "once" 
+            client.config.settings["rust-analyzer"].check.overrideCommand = { "x.py", "check", "--json-output" }
+            client.config.settings["rust-analyzer"].linkedProjects = {
+              "Cargo.toml",
+              "compiler/rustc_codegen_cranelift/Cargo.toml",
+              "compiler/rustc_codegen_gcc/Cargo.toml",
+              "library/Cargo.toml",
+              "src/bootstrap/Cargo.toml",
+              "src/tools/rust-analyzer/Cargo.toml"
+            } 
+
+            client.config.settings["rust-analyzer"].rustfmt.overrideCommand = { workspace_path .. "/build/host/rustfmt/bin/rustfmt", "--edition=2021" }
+            client.config.settings["rust-analyzer"].procMacro.server = workspace_path .. "/build/host/stage0/libexec/rust-analyzer-proc-macro-srv"
+            client.config.settings["rust-analyzer"].procMacro.enable = true
+            client.config.settings["rust-analyzer"].cargo.buildScripts.enable = true
+            client.config.settings["rust-analyzer"].cargo.buildScripts.invocationStrategy = "once"
+            client.config.settings["rust-analyzer"].cargo.buildScripts.overrideCommand = { "x.py", "check", "--json-output" } 
+            client.config.settings["rust-analyzer"].cargo.sysrootSrc = "./library"
+            client.config.settings["rust-analyzer"].rustc.source = "./Cargo.toml"
+            client.config.settings["rust-analyzer"].cargo.extraEnv = { RUSTC_BOOTSTRAP = "1" }
           end
         end,
         settings = {
           ["rust-analyzer"] = {
+            check = {
+              overrideCommand = {},
+            },
+            linkedProjects = {},
             cargo = {
-              features = {}
+              features = {},
+              buildScripts = {
+                overrideCommand = {},
+              },
+              extraEnv = {},
             },
             rustfmt = {
-              extraArgs = {}
-            }
+              overrideCommand = {},
+              extraArgs = {},
+            },
+            rustc = {},
+            procMacro = {},
           }
         },
         { capabilities = capabilities }
       })
-      lspconfig.typst_lsp.setup({ capabilities = capabilities })
+      lspconfig.tinymist.setup({ capabilities = capabilities })
       lspconfig.pylsp.setup({ capabilities = capabilities })
       local configs = require("lspconfig.configs")
 
@@ -203,11 +245,13 @@ require("lazy").setup({
       end
 
       lspconfig.lexical.setup({})
+
+      lspconfig.zls.setup({})
       end
   },
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.6",
+    commit = "a4ed825",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       local builtin = require("telescope.builtin")
@@ -223,7 +267,11 @@ require("lazy").setup({
       vim.keymap.set("n", "gi", builtin.lsp_implementations)
       vim.keymap.set("n", "gr", builtin.lsp_references)
 	
-      require("telescope").setup({})
+      require("telescope").setup({
+        defaults = {
+          layout_strategy = "vertical",
+        }
+      })
     end
   },
   {
