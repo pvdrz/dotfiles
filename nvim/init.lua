@@ -164,89 +164,9 @@ require("lazy").setup({
   
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      lspconfig.rust_analyzer.setup({
-        on_init = function(client)
-          local path = client.workspace_folders[1].name
-
-          if string.find(path, "dnssec") then
-            client.config.settings["rust-analyzer"].cargo.features = { "dnssec", "dnssec-ring", "recursor", "sqlite", "resolver", "blocklist" }
-          elseif string.find(path, "bindgen") then
-            client.config.settings["rust-analyzer"].rustfmt.extraArgs = { "+nightly" }
-          elseif string.find(path, "ferrocene/ferrocene") then
-            local start_index, end_index = string.find(path, "ferrocene/ferrocene")
-            local workspace_path = string.sub(path, 1, end_index)
-            client.config.settings["rust-analyzer"].check.invocationStrategy = "once" 
-            client.config.settings["rust-analyzer"].check.overrideCommand = { "x.py", "check", "--json-output" }
-            client.config.settings["rust-analyzer"].linkedProjects = {
-              "Cargo.toml",
-              "compiler/rustc_codegen_cranelift/Cargo.toml",
-              "compiler/rustc_codegen_gcc/Cargo.toml",
-              "library/Cargo.toml",
-              "src/bootstrap/Cargo.toml",
-              "src/tools/rust-analyzer/Cargo.toml"
-            } 
-
-            client.config.settings["rust-analyzer"].rustfmt.overrideCommand = { workspace_path .. "/build/host/rustfmt/bin/rustfmt", "--edition=2021" }
-            client.config.settings["rust-analyzer"].procMacro.server = workspace_path .. "/build/host/stage0/libexec/rust-analyzer-proc-macro-srv"
-            client.config.settings["rust-analyzer"].procMacro.enable = true
-            client.config.settings["rust-analyzer"].cargo.buildScripts.enable = true
-            client.config.settings["rust-analyzer"].cargo.buildScripts.invocationStrategy = "once"
-            client.config.settings["rust-analyzer"].cargo.buildScripts.overrideCommand = { "x.py", "check", "--json-output" } 
-            client.config.settings["rust-analyzer"].cargo.sysrootSrc = "./library"
-            client.config.settings["rust-analyzer"].rustc.source = "./Cargo.toml"
-            client.config.settings["rust-analyzer"].cargo.extraEnv = { RUSTC_BOOTSTRAP = "1" }
-          end
-        end,
-        settings = {
-          ["rust-analyzer"] = {
-            check = {
-              overrideCommand = {},
-            },
-            linkedProjects = {},
-            cargo = {
-              features = {},
-              buildScripts = {
-                overrideCommand = {},
-              },
-              extraEnv = {},
-            },
-            rustfmt = {
-              overrideCommand = {},
-              extraArgs = {},
-            },
-            rustc = {},
-            procMacro = {},
-          }
-        },
-        { capabilities = capabilities }
-      })
+      lspconfig.rust_analyzer.setup({ capabilities = capabilities })
       lspconfig.tinymist.setup({ capabilities = capabilities })
       lspconfig.pylsp.setup({ capabilities = capabilities })
-      local configs = require("lspconfig.configs")
-
-      local lexical_config = {
-        filetypes = { "elixir", "eelixir", "heex" },
-        cmd = { "/my/home/projects/_build/dev/package/lexical/bin/start_lexical.sh" },
-        settings = {},
-      }
-
-      if not configs.lexical then
-        configs.lexical = {
-          default_config = {
-            filetypes = lexical_config.filetypes,
-            cmd = lexical_config.cmd,
-            root_dir = function(fname)
-              return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
-            end,
-            -- optional settings
-            settings = lexical_config.settings,
-          },
-        }
-      end
-
-      lspconfig.lexical.setup({})
-
-      lspconfig.zls.setup({})
 
       lspconfig.ocamllsp.setup({
         settings = {
