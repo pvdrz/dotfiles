@@ -5,7 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", 
+    "--branch=stable",
     lazypath,
   })
 end
@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ","
 
 -- Don't paste with the middle mouse button
-for _, prefix in ipairs({"", "2-", "3-", "4-"}) do
+for _, prefix in ipairs({ "", "2-", "3-", "4-" }) do
   local lhs = "<" .. prefix .. "MiddleMouse>"
   vim.keymap.set("", lhs, "<Nop>", {})
 end
@@ -23,7 +23,7 @@ end
 -- set termguicolors
 vim.o.termguicolors = true
 -- show line numbers
-vim.wo.number = true
+vim.o.number = true
 
 -- hide buffers instead of closing them
 vim.o.hidden = true
@@ -34,9 +34,9 @@ vim.o.swapfile = false
 -- close preview/scratch window
 vim.o.completeopt = "menuone,noselect"
 -- enable mouse
-vim.api.nvim_set_option("mouse", "a")
+vim.o.mouse = "a"
 -- enable system clipboard
-vim.api.nvim_set_option("clipboard", "unnamedplus")
+vim.o.clipboard = "unnamedplus"
 
 
 local function set_tabsize(tabsize, set_fn)
@@ -48,7 +48,6 @@ end
 -- set default tabsize
 set_tabsize(4, function(option, value)
   vim.o[option] = value
-  vim.bo[option] = value
 end)
 
 -- set tabsize to 2 for some languages
@@ -61,13 +60,12 @@ for _, extension in ipairs(extensions) do
       set_tabsize(2, function(option, value)
         vim.bo[option] = value
       end)
-    end
+    end,
   })
 end
 
 -- expand tabs with spaces
 vim.o.expandtab = true
-vim.bo.expandtab = true
 -- adjust to the next indentation level
 vim.o.smarttab = true
 
@@ -75,12 +73,14 @@ vim.o.smarttab = true
 -- vim.o.loaded_netrwPlugin = 1
 
 
--- set *.typ filetype to typst 
+-- set *.typ filetype to typst
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.typ",
   callback = function()
-    vim.bo.filetype = "typst"
-  end
+    vim.schedule(function()
+      vim.bo.filetype = "typst"
+    end)
+  end,
 })
 
 require("lazy").setup({
@@ -97,56 +97,63 @@ require("lazy").setup({
   {
     "echasnovski/mini.surround",
     version = "*",
-    config = function() 
+    config = function()
       require("mini.surround").setup({})
-    end
-  },{
+    end,
+  },
+  {
     "chentoast/marks.nvim",
     config = function()
       require("marks").setup({})
-    end
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
       local ts_utils = require("nvim-treesitter.ts_utils")
-        
-      vim.keymap.set("n", "<leader>tn", function() ts_utils.goto_node(ts_utils.get_next_node(ts_utils.get_node_at_cursor(), false, false)) end)
-      vim.keymap.set("n", "<leader>tp", function() ts_utils.goto_node(ts_utils.get_previous_node(ts_utils.get_node_at_cursor(), false, false)) end)
+
+      vim.keymap.set("n", "<leader>tn", function()
+        ts_utils.goto_node(ts_utils.get_next_node(ts_utils.get_node_at_cursor(), false, false))
+      end)
+      vim.keymap.set("n", "<leader>tp", function()
+        ts_utils.goto_node(ts_utils.get_previous_node(ts_utils.get_node_at_cursor(), false, false))
+      end)
 
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { "rust", "lua", "c", "typst", "python" }, 
+        ensure_installed = { "rust", "lua", "c", "typst", "python" },
         highlight = {
           enable = true,
         },
         incremental_selection = {
           enable = true,
-        }
+        },
       })
-    end
+    end,
   },
   {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
-    config = function() 
+    config = function()
       vim.cmd.colorscheme("catppuccin-mocha")
-    end
+    end,
   },
   {
     "lewis6991/gitsigns.nvim",
     config = function()
       local gitsigns = require("gitsigns")
 
-      vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk);
-      vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk);
-      vim.keymap.set("n", "<leader>hu", gitsigns.undo_stage_hunk);
-      vim.keymap.set("n", "<leader>hb", function() gitsigns.blame_line({ full = true }) end);
-      vim.keymap.set("n", "<leader>hn", gitsigns.next_hunk);
+      vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk)
+      vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk)
+      vim.keymap.set("n", "<leader>hu", gitsigns.undo_stage_hunk)
+      vim.keymap.set("n", "<leader>hb", function()
+        gitsigns.blame_line({ full = true })
+      end)
+      vim.keymap.set("n", "<leader>hn", gitsigns.next_hunk)
 
       gitsigns.setup({})
-    end
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -154,14 +161,14 @@ require("lazy").setup({
       local lspconfig = require("lspconfig")
 
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
-
       vim.keymap.set("n", "K", vim.lsp.buf.hover)
       vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
       vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename)
-      vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format({ async = true }) end)
-
+      vim.keymap.set("n", "<leader>f", function()
+        vim.lsp.buf.format({ async = true })
+      end)
       vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
-  
+
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       lspconfig.rust_analyzer.setup({ capabilities = capabilities })
@@ -171,56 +178,60 @@ require("lazy").setup({
       lspconfig.ocamllsp.setup({
         settings = {
           ocamlformat = "ocamlformat",
-        }
+        },
       })
-      end
+    end,
   },
   {
     "nvim-telescope/telescope.nvim",
-    commit = "a4ed825",
+    -- commit = "a4ed825",
+    tag = "0.1.x",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       local builtin = require("telescope.builtin")
 
       vim.keymap.set("n", "<space>f", builtin.find_files)
-      vim.keymap.set("n", "<space>b", function() builtin.buffers({ sort_mru = true }) end)
+      vim.keymap.set("n", "<space>b", function()
+        builtin.buffers({ sort_mru = true })
+      end)
       vim.keymap.set("n", "<space>D", builtin.diagnostics)
-      vim.keymap.set("n", "<space>d", function() builtin.diagnostics({ bufnr = 0 }) end )
+      vim.keymap.set("n", "<space>d", function()
+        builtin.diagnostics({ bufnr = 0 })
+      end)
       vim.keymap.set("n", "<space>l", builtin.live_grep)
 
       vim.keymap.set("n", "gd", builtin.lsp_definitions)
       vim.keymap.set("n", "gt", builtin.lsp_type_definitions)
       vim.keymap.set("n", "gi", builtin.lsp_implementations)
       vim.keymap.set("n", "gr", builtin.lsp_references)
-	
+
       require("telescope").setup({
         defaults = {
           layout_strategy = "vertical",
-        }
+        },
       })
-    end
+    end,
   },
   {
     "numToStr/Comment.nvim",
     opts = {
       opleader = {
         mappings = {
-	  basic = false,
-	  extra = false,
-	}
-      }
+          basic = false,
+          extra = false,
+        },
+      },
     },
     config = function()
       local api = require("Comment.api")
-
       local esc = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
 
       vim.keymap.set("n", "<leader>c", api.toggle.linewise.current)
       vim.keymap.set("x", "<leader>c", function()
-	vim.api.nvim_feedkeys(esc, "nx", false)
-	api.toggle.linewise(vim.fn.visualmode())
+        vim.api.nvim_feedkeys(esc, "nx", false)
+        api.toggle.linewise(vim.fn.visualmode())
       end)
-    end
+    end,
   },
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-buffer",
@@ -232,20 +243,20 @@ require("lazy").setup({
       local cmp = require("cmp")
 
       cmp.setup({
-	snippet = {
-	  expand = function(args)
+        snippet = {
+          expand = function(args)
             vim.fn["vsnip#anonymous"](args.body)
-	  end
-	},
-	mapping = cmp.mapping.preset.insert({
-          ["<CR>"] = cmp.mapping.confirm({ select = true })
-	}),
-	sources = cmp.config.sources({
-	  { name = "nvim_lsp"},
-	  { name = "vsnip"},
-	  { name = "buffer"},
-	})
+          end,
+        },
+        mapping = cmp.mapping.preset.insert({
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        }),
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "vsnip" },
+          { name = "buffer" },
+        }),
       })
-    end
-  }
+    end,
+  },
 })
