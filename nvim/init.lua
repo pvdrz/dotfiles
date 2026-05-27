@@ -158,8 +158,6 @@ require("lazy").setup({
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
-
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
       vim.keymap.set("n", "K", vim.lsp.buf.hover)
       vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
@@ -171,7 +169,7 @@ require("lazy").setup({
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      lspconfig.lua_ls.setup({
+      vim.lsp.config("lua_ls", {
         on_init = function(client)
           if client.workspace_folders then
             local path = client.workspace_folders[1].name
@@ -215,16 +213,21 @@ require("lazy").setup({
           Lua = {},
         },
       })
+      vim.lsp.enable("lua_ls")
 
-      lspconfig.rust_analyzer.setup({ capabilities = capabilities })
-      lspconfig.tinymist.setup({ capabilities = capabilities })
-      lspconfig.pylsp.setup({ capabilities = capabilities })
+      vim.lsp.config("rust_analyzer", { capabilities = capabilities })
+      vim.lsp.enable("rust_analyzer")
 
-      lspconfig.ocamllsp.setup({
+      vim.lsp.enable("tinymist")
+
+      vim.lsp.enable("pylsp")
+
+      vim.lsp.config("ocamllsp", {
         settings = {
           ocamlformat = "ocamlformat",
         },
       })
+      vim.lsp.enable("ocamllsp")
     end,
   },
   {
