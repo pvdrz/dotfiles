@@ -247,6 +247,12 @@ require("lazy").setup({
       lspconfig.lexical.setup({})
 
       lspconfig.zls.setup({})
+
+      lspconfig.ocamllsp.setup({
+        settings = {
+          ocamlformat = "ocamlformat",
+        }
+      })
       end
   },
   {
