@@ -108,30 +108,6 @@ require("lazy").setup({
     end,
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-      local ts_utils = require("nvim-treesitter.ts_utils")
-
-      vim.keymap.set("n", "<leader>tn", function()
-        ts_utils.goto_node(ts_utils.get_next_node(ts_utils.get_node_at_cursor(), false, false))
-      end)
-      vim.keymap.set("n", "<leader>tp", function()
-        ts_utils.goto_node(ts_utils.get_previous_node(ts_utils.get_node_at_cursor(), false, false))
-      end)
-
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = { "rust", "lua", "c", "typst", "python" },
-        highlight = {
-          enable = true,
-        },
-        incremental_selection = {
-          enable = true,
-        },
-      })
-    end,
-  },
-  {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
